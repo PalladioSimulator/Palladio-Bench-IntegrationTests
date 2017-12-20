@@ -1,0 +1,52 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _6o_YkNkxEeeXl_p6TSmJmg,_DQARsNkyEeeXl_p6TSmJmg,_GBN1ENkyEeeXl_p6TSmJmg
+Element-Name: SIMUCOM-49 Fork Test
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _o7e1ANkxEeeXl_p6TSmJmg
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 12/19/17 9:51 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+PCM Instanz starten, Beispiel Projekt (mit zwei asynchronen Forks[ForActions in PCM], ein Synchronisationspunkt und closed Workload) unter (https://svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/PCMFork_Example) laden, ForkTest.launch als "ForkTest" ausführen, PCM Result Perspektive öffnen, Memory DatasourceExperiment ausführen, 
+Antwortzeit des DefaultUsageScenario als JFreeChart ResponseTime Histogramm, in Diagramm Visualisierung prüfen ob 1,2 in 75% der fälle, 1,0 in 25% der Fälle;
+Auslastung von CPU und HDD als JFreeChart Utilisation Pie Chart, in Diagramm-Visualisierung prüfen ob Idle in 11.5%, Busy 1 Job in 85,2% und Busy 2 Jobs in 3,3%
+komplexe Überprüfung der CSV Datei notwendig!!!
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select PCMForkExample | get-menu -path "Run As/Run Configurations..." | click
+with [get-window "Run Configurations"] {
+    get-tree | select "SimuBench/Fork Test"
+    get-tab-folder | get-tab-item Simulation | click
+    get-group "Simulation Results" | get-group "Data Set" | get-button "Browse..." | click
+    with [get-window "Select Datasource..."] {
+        get-table | select "LocalMemoryRepository.*"
+        get-button OK | click
+    }
+    get-button Run | click
+}
+with [get-view Experiments] {
+    click
+    get-tree | select "Local Memory.*"
+    get-button "Export Repository to CSV files" | click
+}
+with [get-window "Select Batch Export Target Folder"] {
+    get-group "Location:" | get-button "Workspace..." | click
+    with [get-window "Folder Selection"] {
+        get-tree | select "PCMForkExample"
+        get-button OK | click
+    }
+    get-button Finish | click
+}
+
+read-csv-file "workspace:/PCMForkExample/Fork_Test__MYvqMOTrEeeIuOjX_o4g3g/Default_Variation_MaBckOTrEeeIuOjX_o4g3g/Tue_Dec_19_20_01_49_CET_2017__EVm9YOTvEeeIuOjX_o4g3g/Usage_Scenario_defaultUsageScenario_Response_Time_Tuple.csv" | assert-non-empty
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

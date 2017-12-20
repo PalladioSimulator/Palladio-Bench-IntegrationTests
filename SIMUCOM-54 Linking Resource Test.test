@@ -1,0 +1,55 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _isefcNkNEeeBVcEmtPHXxw,_2jg7UNkNEeeBVcEmtPHXxw,_FMHjcNkOEeeBVcEmtPHXxw
+Element-Name: SIMUCOM-54 Linking Resource Test
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _NC_1kNkNEeeBVcEmtPHXxw
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 12/19/17 9:46 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+PCM Instanz starten, Linking Resource Test Projekt laden(https://svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/LinkingResource_Test/), DEBUG Ausgabe anzeigen lassen(Enable Verbose Logging), als LR-Test ausführen, Konsolen Ausgabe auf folgenden Text überprüfen: 
+57460    [Thread-8  ] DEBUG: A network load of 133.31 has been determined. [de.uka.ipd.sdq.simucomframework.resources.SimulatedLinkingResource]
+57595    [Thread-8  ] DEBUG: Value 500 added to stackframe under id RETURN.BYTESIZE [de.uka.ipd.sdq.simucomframework.variables.stackframe.SimulatedStackframe
+57595    [Thread-8  ] DEBUG: A network load of 50.01 has been determined. [de.uka.ipd.sdq.simucomframework.resources.SimulatedLinkingResource]
+Überprüfung mittels Resource Demand csv!
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Model Explorer" | get-tree | select "LinkingResourceTest" | get-menu -path "Run As/Run Configurations..." | click
+with [get-window "Run Configurations"] {
+    get-tree | select "SimuBench/LinkingResourceTest"
+    get-tab-folder | get-tab-item Simulation | click
+    get-group "Simulation Results" | get-group "Data Set" | get-button "Browse..." | click
+    with [get-window "Select Datasource..."] {
+        get-table | select "LocalMemoryRepository.*"
+        get-button OK | click
+    }
+    get-button Run | click
+}
+
+with [get-view Experiments] {
+    click
+    get-tree | select "Local Memory.*"
+    get-button "Export Repository to CSV files" | click
+}
+with [get-window "Select Batch Export Target Folder"] {
+    get-group "Location:" | get-button "Workspace..." | click
+    with [get-window "Folder Selection"] {
+        get-tree | select "LinkingResourceTest"
+        get-button OK | click
+    }
+    get-button Finish | click
+}
+
+assert-tables-match [read-csv-file "workspace:/LinkingResourceTest/LinkResTestReferenceResource_Demand_Tuple.csv"]
+[read-csv-file "workspace:/LinkingResourceTest/LinkingResourceTest__UsMdMOTiEeeB8LgEAggEQA/Default_Variation_Ush0YOTiEeeB8LgEAggEQA/Tue_Dec_19_18_35_59_CET_2017__E7BOAOTjEeeB8LgEAggEQA/Linking_Resource_aName_Resource_Demand_Tuple.csv"]
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

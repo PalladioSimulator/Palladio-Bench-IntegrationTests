@@ -1,0 +1,185 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.debug
+Debug-NoBreakpoints: true
+Debug-NoLaunchShortcuts: false
+Debug-NoLaunches: true
+Element-Name: PCMSetVariable Launch
+Element-Type: context
+Element-Version: 2.0
+Id: _Ycz_8NktEeeXl_p6TSmJmg
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 12/4/17 9:11 PM
+
+------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
+Content-Type: q7/binary
+Entry-Name: debug.launchtypes
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADtVsuOEzEQvCPxD9Hc
+mbTttrs72rDyU0KCEyBxDckoG5EXebDL39PZaPeIOHBMSTMe29Xlbo/k8t3902Y9+jUcjqvddtqZHrrR
+sJ3vFqvtctp9/dLecXf//u2bu91h2Q/z9Wp/HPrDfH869fPTU78Yvp+Xk4+z83b+8OX3fhg9bVaTVzV7
+UVP97XGi49Pu4XTaT8bjx8fHfrdZ9io5/vbpwwvlLyu8hr7MX0KfOWPljJ853Wg72wzT7vNqc05awkM3
+Wi2m3WLozz9m/Wq/6I+Ln/1RZ+e77emwW6+HQ38hX7PXejVgM1uqBIsHrEhQIJoIEa4oKMiI3l67Bl5b
+Bnf9tmwLNH/t6Vt1steQJi222ljb0oK2JTAFsRwEY2vYSEcSsUCoJFxrbkYjTPMtx5xy8eQoc6qhliap
+ZipYpUGLIQmkXFHHuVJtTdhEl4WIGquQaiddxkogJ5JSbspMqmUZ9fFsWJelwoUzRXECmheLIxtRUoiR
+JAeORjhkKeJDuwJuuOGGG274B5TQQoXgrz3rSF0Eq3ftPwAg6PHOTsJVXUh9CtF41IM9+5JTScayU9vK
+gAXYY4xej35IaLi2oh6jFkQupBwkN8aaAwYCILWsDC75UksFdqWyJ1KzSSZXEOdjMdmrP7hCKVgijk5Q
+bE62Rt+sCw0wWsOojlJsNi1biL5m9tEm00BjghhSls5Zg8VWp5WoUjSenUNjjSO2GFy8bFowMbicQX0N
+pSav+dZCtqCPjTRDddNLCjlaLoYhJCsXf7WaTKheFUWr42TVGsk8l+fAoe6TMaDpOEo+8ss/0130egvA
+WNEGYNuN9R70B1BLBwjK1DK9bwIAADAJAABQSwECFAAUAAgICAAAACEAytQyvW8CAAAwCQAACAAJAAAA
+AAAAAAAAAAAAAAAALmNvbnRlbnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/AAAArgIAAAAA
+------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e--
+------=_SetVariable Example.debug.launchconfiguration-04b055de-a9e7-3e94-a867-59d1d3d1d798
+Content-Type: text/launchconfiguration
+Entry-Name: SetVariable Example.debug.launchconfiguration
+
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.rcptt.ctx.debug:LaunchConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" xmlns:org.eclipse.rcptt.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="SetVariable Example" typeId="de.uka.ipd.sdq.simucontroller.SimuLaunching">
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="EDP2RepositoryID">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_PEy4wNkOEeeLpeZkIXkCzw"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="accuracyQualityAnnotationFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="allocationFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/PCMSetVariableExample/setvariable.allocation"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="clear">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="confidenceBatchSize">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="200"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="confidenceHalfWidth">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="10"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="confidenceLevel">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="95"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="confidenceMinNumberOfBatches">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="60"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="confidenceModelElementName">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="confidenceModelElementURI">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="confidenceUseAutomaticBatches">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="datasourceID">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclInteger"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="de.uka.ipd.sdq.workflowengine.debuglevel">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclInteger" value="2"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="eventMiddlewareRepositoryFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="pathmap://PCM_MODELS/default_event_middleware.repository"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="experimentRun">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="SetVariable Example"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="featureConfig">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="pathmap://PCM_MODELS/ConnectorConfig.featureconfig"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="fixedSeed0">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="0"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="fixedSeed1">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="1"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="fixedSeed2">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="2"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="fixedSeed3">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="3"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="fixedSeed4">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="4"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="fixedSeed5">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="5"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="maximum">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="maximumMeasurementCount">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="1000"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="minimum">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="mwRepositoryFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="pathmap://PCM_MODELS/Glassfish.repository"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="outpath">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="de.uka.ipd.sdq.temporary"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="persistenceFramework">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="Experiment Data Persistency &amp; Presentation (EDP2)"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="reliability.simulateFailures">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="rmiRepositoryFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="pathmap://PCM_MODELS/Glassfish.repository"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="simTime">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="150000"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="simulateAccuracy">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="simulateFailures">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="simulateLinkingResources">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="simulateThroughputOfLinkingResources">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="simulatorId">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="de.uka.ipd.sdq.codegen.simucontroller.simucom"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="stepwidth">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="usageFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/PCMSetVariableExample/setvariable.usagemodel"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="useConfidenceStopCondition">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="useFixedSeed">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="variable">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="variationId">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="verboseLogging">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+</org.eclipse.rcptt.ctx.debug:LaunchConfiguration>
+
+------=_SetVariable Example.debug.launchconfiguration-04b055de-a9e7-3e94-a867-59d1d3d1d798--
+------=_debug.breakpoints-5e4f72bb-803b-3bad-9f69-7f32fb7c3fae
+Content-Type: text/breakpoints
+Entry-Name: debug.breakpoints
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+
+------=_debug.breakpoints-5e4f72bb-803b-3bad-9f69-7f32fb7c3fae--
+------=_debug.launches-be8ac185-ac72-3f40-ae87-94751ee91eea
+Content-Type: text/launch
+Entry-Name: debug.launches
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+
+------=_debug.launches-be8ac185-ac72-3f40-ae87-94751ee91eea--
