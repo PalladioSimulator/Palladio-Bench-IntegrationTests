@@ -12,10 +12,8 @@
 	     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <!-- Set artifact id according to a RCPTT project name  -->
-  <artifactId>productTests</artifactId>
+  <artifactId>de.palladio.ui.build.uitests</artifactId>
   <!-- Set group id based on application under test name -->
-  <groupId>com.company.product</groupId>
-  <version>2.2.0-SNAPSHOT</version>
   <!-- RCPTT Maven Plugin provides this packaging type -->
   <packaging>rcpttTest</packaging>
 
@@ -78,6 +76,8 @@
             <!--
             <explicit>http://server/path/aut-archive.zip</explicit>
             -->
+            
+            <explicit>https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0</explicit>
             
             <!-- AUT can be downloaded automatically from Maven repository -->
             <!-- 
@@ -222,4 +222,10 @@
     </plugins>
   </build>
 
+  <version>2.2.0-SNAPSHOT</version>
+  <parent>
+  	<groupId>de.palladio.build</groupId>
+  	<artifactId>integration-tests</artifactId>
+  	<version>2.2.0-SNAPSHOT</version>
+  </parent>
 </project>
