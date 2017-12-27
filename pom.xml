@@ -77,7 +77,7 @@
             <explicit>http://server/path/aut-archive.zip</explicit>
             -->
             
-            <explicit>https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0</explicit>
+            <explicit>https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/Palladio.[classifier].zip</explicit>
             
             <!-- AUT can be downloaded automatically from Maven repository -->
             <!-- 
