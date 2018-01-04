@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	<groupId>org.palladiosimulator.product.tests</groupId>
+  	<artifactId>parent</artifactId>
+  	<version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>org.palladiosimulator.product.tests.ui</artifactId>
+
+  <packaging>rcpttTest</packaging>
+
+  <!-- RCPTT Maven Plugin and RCPTT Runner are hosted in this repository -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>rcptt-releases</id>
+      <name>RCPTT Maven repository</name>
+      <url>https://repo.eclipse.org/content/repositories/rcptt-releases/</url>
+    </pluginRepository>
+	<!--
+    <pluginRepository>
+      <id>rcptt-snapshots</id>
+      <name>RCPTT Maven Snapshots repository</name>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <url>https://repo.eclipse.org/content/repositories/rcptt-snapshots/</url>
+    </pluginRepository>
+	-->
+  </pluginRepositories>
+
+  <properties>
+    <rcptt-maven-version>2.2.0</rcptt-maven-version>
+  </properties>
+
+  <!-- The main part of RCPTT Maven plugin -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.rcptt</groupId>
+        <artifactId>rcptt-maven-plugin</artifactId>
+        <version>${rcptt-maven-version}</version>
+        <extensions>true</extensions>
+        <configuration>
+
+          <aut>
+            <explicit>https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/Palladio.[classifier].zip</explicit>
+
+            <injections>
+              <!-- features are optional - when omitted, all features from given site will be installed -->
+              <!--
+              <injection>
+                <site></site>
+                <features>
+                  <feature>com.comanyname.featureid</feature>
+                </features>
+              </injection>
+              -->
+            </injections>
+
+           <!-- additional AUT args (besides taken in its ini-file) can be set 
+                Use one argument per <arg> element -->
+           <!-- 
+            <args>
+              <arg>-ws</arg>
+              <arg>$${target.ws}</arg>
+            </args>
+            -->
+           <!-- optional VM args can be set too -->
+           <!--
+		   <vmArgs>
+			 <vmArg>-Xmx768m</vmArg>
+			 <vmArg>-XX:MaxPermSize=256m</vmArg>
+		   </vmArgs>
+           -->
+          </aut>
+
+          <runner>
+            <version>${rcptt-maven-version}</version>
+            <vmArgs>
+              <vmArg>-Xmx1024m</vmArg>
+              <vmArg>-XX:MaxPermSize=256m</vmArg>
+            </vmArgs>
+          </runner>
+
+          <!-- Test options for RCPTT Runner, most popular options listed here.
+               Full list of options is available at:
+               https://ci.xored.com/doc/runner/
+          -->
+          <testOptions>
+            <!-- Timeout for all tests, in seconds -->
+            <execTimeout>1800</execTimeout>
+            <!-- Timeout for a single test case, in seconds -->
+            <testExecTimeout>300</testExecTimeout>
+
+            <!-- When set to true, in case of test failure
+                 AUT will be restarted. This significantly
+                 slows down execution, but may be useful 
+                 for some test suites -->
+            <!--
+            <restartAUTOnFailure>true</restartAUTOnFailure>
+            -->
+          </testOptions>
+
+          <!-- By default RCPTT Runner runs tests from a project directory,
+               but in some cases it might be required to import additional 
+               projects into runner's workspace -->
+          <!--
+          <projects>
+            <project>${project.basedir}/../project</project>
+          </projects>
+          -->
+
+          <!-- By default RCPTT Runner runs all tests from workspace,
+               but it is possible to pass test suite names, so it
+               will execute only test suites from given project. -->
+
+          <!--
+		  <suites>
+			<suite>MyTestSuite</suite>
+		  </suites>
+          -->
+
+          <!-- Sometimes it might be useful to skip a test case
+               (for instance because of some unresolved bug). RCPTT
+               can skip tests based on its tags. By default RCPTT skips
+               tests with tag 'skipExecution' (this value has been 
+               chosen because on one hand it is descriptive enough,
+               on another hand it is unlikely that this tag name
+               will collide with some user's tag)
+               -->
+          <!--
+          <skipTags>
+            <skipTag>linuxOnly</skipTag>
+          </skipTags>
+          -->
+
+          <!-- By default RCPTT generates a single HTML report file with
+               all tests, but it is possible to generate one file per
+               test -->
+          <!--
+          <splitHtmlReport>true</splitHtmlReport>
+          -->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
