@@ -9,5 +9,82 @@
 	<modules>
 		<module>org.palladiosimulator.product.tests.ui</module>
 	</modules>
-	
+
+	<!-- OS specific properties -->
+	<profiles>
+		<profile>
+			<id>win32-x86</id>
+			<activation>
+				<os>
+					<arch>x86</arch>
+					<family>windows</family>
+				</os>
+			</activation>
+			<properties>
+				<target.platform.os>win32</target.platform.os>
+				<target.platform.ws>win32</target.platform.ws>
+				<target.platform.arch>x86</target.platform.arch>
+			</properties>
+		</profile>
+		<profile>
+			<id>win32-amd64</id>
+			<activation>
+				<os>
+					<arch>amd64</arch>
+					<family>windows</family>
+				</os>
+			</activation>
+			<properties>
+				<target.platform.os>win32</target.platform.os>
+				<target.platform.ws>win32</target.platform.ws>
+				<target.platform.arch>x86_64</target.platform.arch>
+			</properties>
+		</profile>
+		<profile>
+			<id>linux-x86</id>
+			<activation>
+				<os>
+					<arch>i386</arch>
+					<family>unix</family>
+					<name>linux</name>
+				</os>
+			</activation>
+			<properties>
+				<target.platform.os>linux</target.platform.os>
+				<target.platform.ws>gtk</target.platform.ws>
+				<target.platform.arch>x86</target.platform.arch>
+			</properties>
+		</profile>
+		<profile>
+			<id>linux-amd64</id>
+			<activation>
+				<os>
+					<arch>amd64</arch>
+					<family>unix</family>
+					<name>linux</name>
+				</os>
+			</activation>
+			<properties>
+				<target.platform.os>linux</target.platform.os>
+				<target.platform.ws>gtk</target.platform.ws>
+				<target.platform.arch>x86_64</target.platform.arch>
+			</properties>
+		</profile>
+		<profile>
+			<id>cocoa-macosx-x86_64</id>
+			<activation>
+				<os>
+					<arch>x86_64</arch>
+					<family>unix</family>
+					<name>mac os x</name>
+				</os>
+			</activation>
+			<properties>
+				<target.platform.os>macosx</target.platform.os>
+				<target.platform.ws>cocoa</target.platform.ws>
+				<target.platform.arch>x86_64</target.platform.arch>
+			</properties>
+		</profile>
+	</profiles>
+
 </project>

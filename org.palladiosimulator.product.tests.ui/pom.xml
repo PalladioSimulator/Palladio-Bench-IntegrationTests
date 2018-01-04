@@ -44,7 +44,7 @@
         <configuration>
 
           <aut>
-            <explicit>https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/Palladio.[classifier].zip</explicit>
+            <explicit>https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/Palladio.${target.platform.ws}.${target.platform.os}.${target.platform.arch}.zip</explicit>
 
             <injections>
               <!-- features are optional - when omitted, all features from given site will be installed -->
