@@ -77,10 +77,6 @@
 
           <runner>
             <version>${rcptt-maven-version}</version>
-            <vmArgs>
-              <vmArg>-Xmx1024m</vmArg>
-              <vmArg>-XX:MaxPermSize=256m</vmArg>
-            </vmArgs>
           </runner>
 
           <!-- Test options for RCPTT Runner, most popular options listed here.
