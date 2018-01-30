@@ -142,4 +142,7 @@
     </plugins>
   </build>
 
+  <scm>
+  	<connection>scm:svn:https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</connection>
+  </scm>
 </project>
