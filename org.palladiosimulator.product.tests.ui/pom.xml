@@ -36,6 +36,24 @@
   <!-- The main part of RCPTT Maven plugin -->
   <build>
     <plugins>
+       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-plugin</artifactId>
+        <version>1.9.5</version>
+        <configuration>
+          <connectionType>connection</connectionType>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-plugin</artifactId>
+        <version>1.9.5</version>
+        <configuration>
+          <connectionType>developerConnection</connectionType>
+        </configuration>
+      </plugin>
+    
       <plugin>
         <groupId>org.eclipse.rcptt</groupId>
         <artifactId>rcptt-maven-plugin</artifactId>
@@ -142,7 +160,14 @@
     </plugins>
   </build>
 
+
+  <version>1.0-SNAPSHOT</version>
+  <name>Palladio Examples</name>
+  <url>https://sdqweb.ipd.kit.edu/wiki/Palladio_Examples</url>
   <scm>
   	<connection>scm:svn:https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</connection>
+  	<developerConnection>scm:svn:https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</developerConnection>
+    <url>scm:svn:https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</url>
   </scm>
+  
 </project>
