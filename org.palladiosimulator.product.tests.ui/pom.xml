@@ -40,9 +40,23 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-scm-plugin</artifactId>
         <version>1.9.5</version>
-        <configuration>
-          <connectionType>connection</connectionType>
-        </configuration>
+        <executions>
+          <execution>
+            <id>default-resources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>export</goal>
+            </goals>
+         </execution>
+        </executions>
+        <configuration> 
+    		<username>anonymous</username> 
+    		<password>anonymous</password>
+    		<basedir>${project.basedir}</basedir>
+    		<exportDirectory>target/examples</exportDirectory> 
+    		<connectionType>connection</connectionType> 
+    		<connectionUrl>scm:svn:https://svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</connectionUrl>
+  		</configuration> 
       </plugin>
     
       <plugin>
@@ -151,14 +165,4 @@
     </plugins>
   </build>
 
-
-  <version>1.0-SNAPSHOT</version>
-  <name>Palladio Examples</name>
-  <url>https://sdqweb.ipd.kit.edu/wiki/Palladio_Examples</url>
-  <scm>
-  	<connection>scm:svn:https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</connection>
-  	<developerConnection>scm:svn:https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</developerConnection>
-    <url>scm:svn:https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</url>
-  </scm>
-  
 </project>
