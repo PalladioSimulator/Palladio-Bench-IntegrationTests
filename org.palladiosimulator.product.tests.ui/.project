@@ -16,12 +16,12 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1517394755270</id>
+			<id>1517913114174</id>
 			<name></name>
-			<type>10</type>
+			<type>26</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-target</arguments>
+				<arguments>1.0-name-matches-false-false-org.palladiosimulator.product.tests.ui</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>
