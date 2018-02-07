@@ -2,14 +2,14 @@
 Format-Version: 1.0
 Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
-Debug-NoLaunchShortcuts: true
+Debug-NoLaunchShortcuts: false
 Debug-NoLaunches: true
 Element-Name: Infrastructure Component Test Launch
 Element-Type: context
 Element-Version: 2.0
 Id: _9UOk4NkzEeeXl_p6TSmJmg
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 1/17/18 12:42 PM
+Save-Time: 2/7/18 11:58 AM
 
 ------=_InfrastructureComponent Example (Accuracy Statements - Valid Return Parameter Range).debug.launchconfiguration-1d0ac729-6fa3-3d60-9d90-518ed5b964a8
 Content-Type: text/launchconfiguration
