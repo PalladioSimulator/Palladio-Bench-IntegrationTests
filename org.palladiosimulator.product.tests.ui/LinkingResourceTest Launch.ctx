@@ -2,14 +2,14 @@
 Format-Version: 1.0
 Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
-Debug-NoLaunchShortcuts: false
+Debug-NoLaunchShortcuts: true
 Debug-NoLaunches: true
 Element-Name: LinkingResourceTest Launch
 Element-Type: context
 Element-Version: 2.0
 Id: _FMHjcNkOEeeBVcEmtPHXxw
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/19/18 7:11 PM
+Save-Time: 2/19/18 7:24 PM
 
 ------=_LinkingResourceTest.debug.launchconfiguration-acc6829b-95b7-35d5-9704-2bb26867b5f5
 Content-Type: text/launchconfiguration
@@ -186,7 +186,7 @@ Entry-Name: LinkingResourceTest with Middleware Marshalling.debug.launchconfigur
 <?xml version="1.0" encoding="UTF-8"?>
 <org.eclipse.rcptt.ctx.debug:LaunchConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" xmlns:org.eclipse.rcptt.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="LinkingResourceTest with Middleware Marshalling" typeId="de.uka.ipd.sdq.simucontroller.SimuLaunching">
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="EDP2RepositoryID">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_RxkCoAvzEeiY0bZI4bpbRg"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_bA1dwDcMEee78-rIUlpnPg"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="accuracyQualityAnnotationFile">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
