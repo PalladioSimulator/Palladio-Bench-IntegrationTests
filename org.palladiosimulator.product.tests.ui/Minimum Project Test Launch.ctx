@@ -9,7 +9,7 @@ Element-Type: context
 Element-Version: 2.0
 Id: _wzxDkNpoEee1AOC5I5szSA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/7/18 11:56 AM
+Save-Time: 2/19/18 6:55 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
@@ -129,7 +129,7 @@ Entry-Name: MinimumExample.debug.launchconfiguration
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="de.uka.ipd.sdq.codegen.simucominstance"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="persistenceFramework">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="Experiment Data Persistency &amp; Presentation (EDP2)"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="SensorFramework"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="rmiRepositoryFile">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="pathmap://PCM_MODELS/Glassfish.repository"/>
@@ -171,7 +171,7 @@ Entry-Name: MinimumExample.debug.launchconfiguration
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="verboseLogging">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
   </attributes>
 </org.eclipse.rcptt.ctx.debug:LaunchConfiguration>
 
