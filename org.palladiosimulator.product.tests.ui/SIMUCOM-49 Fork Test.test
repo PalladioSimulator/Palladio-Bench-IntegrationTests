@@ -1,13 +1,13 @@
 --- RCPTT testcase ---
 Format-Version: 1.0
-Contexts: _6o_YkNkxEeeXl_p6TSmJmg,_DQARsNkyEeeXl_p6TSmJmg,_GBN1ENkyEeeXl_p6TSmJmg
+Contexts: _6o_YkNkxEeeXl_p6TSmJmg,_DQARsNkyEeeXl_p6TSmJmg
 Element-Name: SIMUCOM-49 Fork Test
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _o7e1ANkxEeeXl_p6TSmJmg
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/6/18 6:32 PM
+Save-Time: 2/21/18 9:54 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -27,9 +27,13 @@ get-view "Project Explorer" | get-tree | select "PCMFork_Example" | get-menu -pa
 with [get-window "Run Configurations"] {
     get-tree | select "SimuBench/Fork Test"
     get-tab-folder | get-tab-item Simulation | click
-    get-group "Simulation Results" | get-group "Data Set" | get-button "Browse..." | click
+    with [get-group "Simulation Results"] {
+        get-combo -after [get-label "Persistence Framework:"] 
+            | select "Experiment Data Persistency & Presentation (EDP2)"
+        get-group "Data Set" | get-button "Browse..." | click
+    }
     with [get-window "Select Datasource..."] {
-        get-button "Open.." | click
+    	get-button "Add.." | click
         get-window "Open EDP2 Data Source" | get-button Finish | click
         get-table | select "LocalMemoryRepository.*"
         get-button OK | click
@@ -37,6 +41,7 @@ with [get-window "Run Configurations"] {
     get-button Apply | click
     get-button Run | click
 }
+
 with [get-view Experiments] {
     click
     get-tree | select "Local Memory.*"

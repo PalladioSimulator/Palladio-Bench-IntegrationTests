@@ -2,14 +2,14 @@
 Format-Version: 1.0
 Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
-Debug-NoLaunchShortcuts: true
+Debug-NoLaunchShortcuts: false
 Debug-NoLaunches: true
 Element-Name: Minimum Project Test Launch
 Element-Type: context
 Element-Version: 2.0
-Id: _wzxDkNpoEee1AOC5I5szSA
+Id: _EtUAkBZkEei3e74MF3gNbQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/19/18 7:22 PM
+Save-Time: 2/20/18 6:52 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
