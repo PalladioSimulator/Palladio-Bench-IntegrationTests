@@ -2,14 +2,14 @@
 Format-Version: 1.0
 Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
-Debug-NoLaunchShortcuts: false
+Debug-NoLaunchShortcuts: true
 Debug-NoLaunches: true
 Element-Name: Infrastructure Component Test Launch
 Element-Type: context
 Element-Version: 2.0
 Id: _9UOk4NkzEeeXl_p6TSmJmg
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/19/18 7:09 PM
+Save-Time: 2/27/18 3:01 PM
 
 ------=_InfrastructureComponent Example (Accuracy Statements - Valid Return Parameter Range).debug.launchconfiguration-1d0ac729-6fa3-3d60-9d90-518ed5b964a8
 Content-Type: text/launchconfiguration
@@ -560,7 +560,7 @@ Entry-Name: InfrastructureComponent Example.debug.launchconfiguration
 <?xml version="1.0" encoding="UTF-8"?>
 <org.eclipse.rcptt.ctx.debug:LaunchConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" xmlns:org.eclipse.rcptt.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="InfrastructureComponent Example" typeId="de.uka.ipd.sdq.simucontroller.SimuLaunching">
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="EDP2RepositoryID">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_RxkCoAvzEeiY0bZI4bpbRg"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="accuracyQualityAnnotationFile">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
