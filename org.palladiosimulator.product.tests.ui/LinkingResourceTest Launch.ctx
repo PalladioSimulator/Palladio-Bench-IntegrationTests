@@ -9,7 +9,7 @@ Element-Type: context
 Element-Version: 2.0
 Id: _FMHjcNkOEeeBVcEmtPHXxw
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/19/18 7:24 PM
+Save-Time: 2/27/18 3:17 PM
 
 ------=_LinkingResourceTest.debug.launchconfiguration-acc6829b-95b7-35d5-9704-2bb26867b5f5
 Content-Type: text/launchconfiguration
@@ -18,13 +18,13 @@ Entry-Name: LinkingResourceTest.debug.launchconfiguration
 <?xml version="1.0" encoding="UTF-8"?>
 <org.eclipse.rcptt.ctx.debug:LaunchConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" xmlns:org.eclipse.rcptt.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="LinkingResourceTest" typeId="de.uka.ipd.sdq.simucontroller.SimuLaunching">
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="EDP2RepositoryID">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_RxkCoAvzEeiY0bZI4bpbRg"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="accuracyQualityAnnotationFile">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="allocationFile">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/LinkingResource_Test/default.allocation"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/LinkingResourceTest/default.allocation"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="clear">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
@@ -133,7 +133,7 @@ Entry-Name: LinkingResourceTest.debug.launchconfiguration
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="usageFile">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/LinkingResource_Test/default.usagemodel"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/LinkingResourceTest/default.usagemodel"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="useConfidenceStopCondition">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>

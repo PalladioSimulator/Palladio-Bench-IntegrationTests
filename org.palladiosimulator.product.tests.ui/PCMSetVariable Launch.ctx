@@ -9,7 +9,7 @@ Element-Type: context
 Element-Version: 2.0
 Id: _Ycz_8NktEeeXl_p6TSmJmg
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/19/18 7:25 PM
+Save-Time: 2/27/18 3:13 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
@@ -36,13 +36,13 @@ Entry-Name: SetVariable Example.debug.launchconfiguration
 <?xml version="1.0" encoding="UTF-8"?>
 <org.eclipse.rcptt.ctx.debug:LaunchConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" xmlns:org.eclipse.rcptt.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="SetVariable Example" typeId="de.uka.ipd.sdq.simucontroller.SimuLaunching">
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="EDP2RepositoryID">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_RxkCoAvzEeiY0bZI4bpbRg"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="accuracyQualityAnnotationFile">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="allocationFile">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/PCMSetVariable_Example/setvariable.allocation"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/PCMSetVariableExample/setvariable.allocation"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="clear">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
@@ -147,7 +147,7 @@ Entry-Name: SetVariable Example.debug.launchconfiguration
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="usageFile">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/PCMSetVariable_Example/setvariable.usagemodel"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/PCMSetVariableExample/setvariable.usagemodel"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="useConfidenceStopCondition">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>

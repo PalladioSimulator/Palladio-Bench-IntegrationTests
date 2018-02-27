@@ -2,14 +2,14 @@
 Format-Version: 1.0
 Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
-Debug-NoLaunchShortcuts: false
+Debug-NoLaunchShortcuts: true
 Debug-NoLaunches: true
 Element-Name: Minimum Project Test Launch
 Element-Type: context
 Element-Version: 2.0
 Id: _EtUAkBZkEei3e74MF3gNbQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/20/18 6:52 PM
+Save-Time: 2/27/18 3:10 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
@@ -50,7 +50,7 @@ Entry-Name: MinimumExample.debug.launchconfiguration
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="allocationFile">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/Minimum_Project_Example/default.allocation"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/Minimum_Project/default.allocation"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="clear">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
@@ -156,7 +156,7 @@ Entry-Name: MinimumExample.debug.launchconfiguration
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="usageFile">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/Minimum_Project_Example/default.usagemodel"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/Minimum_Project/default.usagemodel"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="useConfidenceStopCondition">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
