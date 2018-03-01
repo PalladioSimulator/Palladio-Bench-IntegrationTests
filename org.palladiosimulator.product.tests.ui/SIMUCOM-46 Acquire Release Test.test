@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _6-Il8B08EeiqQd73_u1uiA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/1/18 4:43 PM
+Save-Time: 3/1/18 5:12 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -23,12 +23,6 @@ PCM Instanz starten, Beispiel Projekt mit dem Namen "AcquireExample" unter (http
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
-
-get-view "Project Explorer" | get-tree | select "Acquire_Example" | key-type F5 | get-menu -path "Rename..." | click
-with [get-window "Rename Resource"] {
-    get-editbox -after [get-label "New name:"] | set-text "AcquireExample"
-    get-button OK | click
-}
 
 get-view "Project Explorer" | get-tree | select "AcquireExample" | get-menu -path "Run As/Run Configurations..." | click
 with [get-window "Run Configurations"] {

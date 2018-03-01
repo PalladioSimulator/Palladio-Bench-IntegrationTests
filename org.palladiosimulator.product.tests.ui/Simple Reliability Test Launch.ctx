@@ -1,0 +1,142 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.debug
+Debug-NoBreakpoints: true
+Debug-NoLaunchShortcuts: true
+Debug-NoLaunches: true
+Element-Name: Simple Reliability Test Launch
+Element-Type: context
+Element-Version: 2.0
+Id: _JNFhsB1uEeiBgNkuthn_dw
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 3/1/18 5:38 PM
+
+------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
+Content-Type: q7/binary
+Entry-Name: debug.launchtypes
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAAB9U01v00AQvSPxHyLf
+cWb2czZqqHZndyUkkBAUiRtKE5NaJE7IB23/PeOmrcSF9cHa8Xsz772Rr64ftpvJn+5w7HfDvMEWmkk3
+LHerfljPm2839R011+/fvrnaHdZtt9z0+2PXHpb706ldnh7aVXd7Xs8+Ls7D8u7mcd9NHrb97LWbGrtJ
+/+E4k/q8uTud9rPp9P7+vt1t1620nH7/9OEF8p8Jr9SX7yP1CTMVzPQJ00yGxbabN5/50+TrbiMiJl+6
+Tb+47Tf96bGZ9Kt5s+ra869F2+9X7XH1u10dn3A/9pvzuh9aYV6IFz+8G3726/NhcRIzo7n2337bxVrG
+UbBgivGQIWKECJeTTTBkjFWXK8Lrm+C5FiCgI+2eCUkYxqA1ngIHG5TKqFgr4ZC1XqmA48PE7MACZmVQ
+UYjslBxdtE+ElmJUymskzzbHmhTZaJI2GWONQSuP5FzxPhe2CcCBSsVzsRGT05grB6MRnDOitQafbHEM
+MdUYtU0u+ZxiLtkHiyDyQoHA6DMXrcWXBnHAPgU2ljjGiAhcbQzJqcKEiQVOmWKhIEkoJaKr+NLJehFh
+EqsodjEG1uCCBAqgqfgsGpQLiipxQu8dhBids8aAIkKMigP7koMdvSCkQhIzZQvFuhStA5GQxFkpVnZV
+a+Y8lnNKrkjYqDUDk7aqxBxqMFXlJGk4XZypADZnLzeoKnpZNtVUC5LRjFg0yaIlJ50hOyT9vGiQbY6z
+TCxGOSDVTOUv+gtQSwcI4+MubDQCAABuAwAAUEsBAhQAFAAICAgAAAAhAOPjLmw0AgAAbgMAAAgACQAA
+AAAAAAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAHMCAAAAAA==
+------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e--
+------=_debug.breakpoints-5e4f72bb-803b-3bad-9f69-7f32fb7c3fae
+Content-Type: text/breakpoints
+Entry-Name: debug.breakpoints
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+
+------=_debug.breakpoints-5e4f72bb-803b-3bad-9f69-7f32fb7c3fae--
+------=_Reliability Test.debug.launchconfiguration-df915820-d67b-3965-8f1a-d09137d37f65
+Content-Type: text/launchconfiguration
+Entry-Name: Reliability Test.debug.launchconfiguration
+
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.rcptt.ctx.debug:LaunchConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" xmlns:org.eclipse.rcptt.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="Reliability Test" typeId="de.uka.ipd.sdq.dsolver_plugin.PCMSolverLaunchConfigurationType.Reliability">
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="accuracyQualityAnnotationFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="allocationFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/ReliabilityTest/default.allocation"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="clear">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="de.uka.ipd.sdq.workflowengine.debuglevel">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclInteger" value="2"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="doSensitivityAnalysis">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="eventMiddlewareRepositoryFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="pathmap://PCM_MODELS/default_event_middleware.repository"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="iterationOverPhysicalSystemStatesEnabled">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="logFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/ReliabilityTest/log.txt"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="markovEvaluationMode">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="POINTSOFFAILURE"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="markovModelFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="markovModelReduction">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="markovModelStorageEnabled">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="markovModelTracesEnabled">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="markovStatistics">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="numberOfEvaluatedSystemStates">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclInteger" value="1"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="numberOfEvaluatedSystemStatesEnabled">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="numberOfExactDecimalPlaces">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclInteger" value="1"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="numberOfExactDecimalPlacesEnabled">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="outpath">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="org.palladiosimulator.temporary"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="rmiRepositoryFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="pathmap://PCM_MODELS/Glassfish.repository"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="saveFileDefault">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/ReliabilityTest/markov-chain.markovresult"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="saveResultsToFileEnabled">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="sensitivityLogFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="sensitivityModelFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="simulateAccuracy">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="singleResults">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean" value="true"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="solvingTimeLimit">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclInteger" value="1"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="solvingTimeLimitEnabled">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclBoolean"/>
+  </attributes>
+  <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="usageFile">
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="platform:/resource/ReliabilityTest/default.usagemodel"/>
+  </attributes>
+</org.eclipse.rcptt.ctx.debug:LaunchConfiguration>
+
+------=_Reliability Test.debug.launchconfiguration-df915820-d67b-3965-8f1a-d09137d37f65--
+------=_debug.launches-be8ac185-ac72-3f40-ae87-94751ee91eea
+Content-Type: text/launch
+Entry-Name: debug.launches
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+
+------=_debug.launches-be8ac185-ac72-3f40-ae87-94751ee91eea--

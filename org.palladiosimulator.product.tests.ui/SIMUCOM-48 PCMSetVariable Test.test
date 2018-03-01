@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _9RnZ8NksEeeXl_p6TSmJmg
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/28/18 3:56 PM
+Save-Time: 3/1/18 5:15 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -21,12 +21,6 @@ Ausgabe gleich, läuft immer bis: 50000.0,50.0
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
-
-get-view "Project Explorer" | get-tree | select "PCMSetVariable_Example" | key-type F5 | get-menu -path "Rename..." | click
-with [get-window "Rename Resource"] {
-    get-editbox -after [get-label "New name:"] | set-text "PCMSetVariableExample"
-    get-button OK | click
-}
 
 get-view "Project Explorer" | get-tree | select "PCMSetVariableExample" | get-menu -path "Run As/Run Configurations..." | click
 with [get-window "Run Configurations"] {
