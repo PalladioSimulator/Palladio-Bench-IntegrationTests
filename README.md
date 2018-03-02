@@ -6,7 +6,7 @@ Preparation:
 - RCPTT Documentation at https://www.eclipse.org/rcptt/documentation/userguide/getstarted/
 - Create new GIT-Project e.g. https://github.com/PalladioSimulator/Palladio-Build-IntegrationTests
 - Create new RCPTT Project
-- Share Project in GIT (Rechtsklick auf Project > Team > Share Project...) and Initial Commit (Rechtsklick auf Projekt > Team > Commit)
+- Share Project in GIT (right click on Project > Team > Share Project...) and Initial Commit (right click on Project > Team > Commit)
 - Downloading Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 - Create new AUT in RCPTT with Palladio Bench 
 
@@ -34,7 +34,7 @@ Procedure for a new Testcase:
 
 Running maven script:
 - Install "m2e - Maven integration for Eclipse" under Help > install new software
-- Right click on pom.xml > Run as > Run Configurations > Create new Maven Build Configuration with goal "verify" (+Screenshots) > Run
+- Right click on pom.xml > Run as > Run Configurations > Create new Maven Build Configuration with goal "verify" (check Screenshots for details about errors) > Run
 - Check console for the results
 
 For more Help check the Community: https://www.eclipse.org/forums/index.php/f/281/
