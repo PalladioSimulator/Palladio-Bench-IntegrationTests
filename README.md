@@ -21,15 +21,15 @@ Automating RCPTT Testing in Maven Builds with the RCPTT Maven Plugins:
 
 Procedure for a new Testcase:
 
-- Create a new testcase in RCPTT Project with the name on Jira, copying steps from Jira in description of the test in RCPTT
+- Create a new testcase in RCPTT Project with its name on Jira, copying steps from Jira in description of the test in RCPTT
 - Creating Contexts and test them with "Apply" 
 - Setting Workspace and check "Clear Workspace"
 - Collect Workbench in running AUT and take over in RCPTT with "Capture"
 - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run configurations
 - Folder to import reference files or other files in project directory
-- Write a script or record it through the "Record" function (where possible, record and copy smaller sections with the snippet function),if possible leave AUT open, restart if necessary, or delete completely and add again
+- Write a script or record it through the "Record" function (where possible, record and copy smaller sections with the snippet function), if possible leave AUT open, restart if necessary, or delete completely and add again
 - List of predefined commands at https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html
-- To analyse your script and run it step by step use the DEBUG perspective
+- To analyse your script and run it step by step use DEBUG perspective
 
 
 Running maven script:
