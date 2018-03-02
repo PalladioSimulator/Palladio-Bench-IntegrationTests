@@ -10,7 +10,7 @@ Preparation:
 - Downloading Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 - Create new AUT in RCPTT with Palladio Bench 
 
-Automating RCPTT Testing in Maven Builds with the RCPTT Maven Plugins:
+Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 
 - Generate pom.xml (right click on project > RCPTT > generate pom.xml), for more infos check https://www.eclipse.org/rcptt/documentation/userguide/maven/
 - Configurate pom.xml (packaging as "rcpttTest", linking AUT), for more infos check https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
