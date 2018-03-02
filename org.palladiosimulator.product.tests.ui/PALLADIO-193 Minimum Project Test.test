@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _QQ7NgNk2EeeXl_p6TSmJmg
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/1/18 5:02 PM
+Save-Time: 3/2/18 5:59 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -21,25 +21,6 @@ unterschiedliche Ausgaben, nur Prüfung ob Datei erstellt wurde!!!
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
-
-get-view "Project Explorer" | get-tree | select "Minimum_Project" | get-menu -path "Run As/Run Configurations..." | click
-with [get-window "Run Configurations"] {
-    get-tree | select "SimuBench/MinimumExample"
-    get-tab-folder | get-tab-item Simulation | click
-    with [get-group "Simulation Results"] {
-        get-combo -after [get-label "Persistence Framework:"] 
-            | select "Experiment Data Persistency & Presentation (EDP2)"
-        get-group "Data Set" | get-button "Browse..." | click
-    }
-    with [get-window "Select Datasource..."] {
-    	get-button "Add.." | click
-        get-window "Open EDP2 Data Source" | get-button Finish | click
-        get-table | select "LocalMemoryRepository.*"
-        get-button OK | click
-    }
-    get-button Apply | click
-    get-button Run | click
-}
 
 with [get-view Experiments] {
     click

@@ -2,14 +2,14 @@
 Format-Version: 1.0
 Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
-Debug-NoLaunchShortcuts: true
+Debug-NoLaunchShortcuts: false
 Debug-NoLaunches: true
 Element-Name: Acquire Release Test Launch
 Element-Type: context
 Element-Version: 2.0
 Id: _kDsOAB09EeiqQd73_u1uiA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/1/18 2:11 PM
+Save-Time: 3/2/18 6:05 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
@@ -203,7 +203,7 @@ Entry-Name: Acquire Example.debug.launchconfiguration
 <?xml version="1.0" encoding="UTF-8"?>
 <org.eclipse.rcptt.ctx.debug:LaunchConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" xmlns:org.eclipse.rcptt.ecl.core="http://www.eclipse.org/ecl/core.ecore" name="Acquire Example" typeId="de.uka.ipd.sdq.simucontroller.SimuLaunching">
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="EDP2RepositoryID">
-    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_PMlFIB1REeiDwJFFtN7q9Q"/>
+    <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value="_XPhIUB43EeiE0NBTkCKz7Q"/>
   </attributes>
   <attributes xsi:type="org.eclipse.rcptt.ctx.debug:PrimitiveValue" name="accuracyQualityAnnotationFile">
     <value xsi:type="org.eclipse.rcptt.ecl.core:EclString" value=""/>
@@ -339,6 +339,6 @@ Content-Type: text/launch
 Entry-Name: debug.launches
 
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+<org.eclipse.rcptt.ctx.debug:Launch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" mode="run" configurationName="Acquire Example"/>
 
 ------=_debug.launches-be8ac185-ac72-3f40-ae87-94751ee91eea--
