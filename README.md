@@ -53,5 +53,4 @@ Tips to make the tests more robust:
 - in graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window
 
 
-
 For more Help check the Community: https://www.eclipse.org/forums/index.php/f/281/
