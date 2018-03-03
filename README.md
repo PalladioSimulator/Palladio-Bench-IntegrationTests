@@ -7,7 +7,8 @@ Preparation:
 - RCPTT Documentation at https://www.eclipse.org/rcptt/documentation/userguide/getstarted/
 - Create new GIT-Project e.g. https://github.com/PalladioSimulator/Palladio-Build-IntegrationTests
 - Create new RCPTT Project
-- Share Project in GIT (right click on Project > Team > Share Project...) and Initial Commit (right click on Project > Team > Commit)
+- Share Project in GIT (right click on Project > Team > Share Project...) and Initial Commit 
+(right click on Project > Team > Commit)
 - Downloading Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 - Create new AUT in RCPTT with Palladio Bench 
 
