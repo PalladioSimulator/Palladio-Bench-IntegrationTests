@@ -36,13 +36,13 @@ Procedure for a new Testcase:
 - To analyse your script and run it step by step use DEBUG perspective
 
 
-Running maven script:
+Running Maven Script:
 - Install "m2e - Maven integration for Eclipse" under Help > install new software
 - Right click on pom.xml > Run as > Run Configurations > Create new Maven Build Configuration with goal "verify" (check Screenshots for details about errors) > Run
 - Check console for the results
 
 
-Tips to make the tests more robust: 
+Tips to make the Tests more robust: 
 - use contexts instead of writing it in the script
 - pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
 - select the options "clear workspace context" and "clear launch configs", if it does not affect the test
