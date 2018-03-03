@@ -43,15 +43,15 @@ Running Maven Script:
 
 
 Tips to make the Tests more robust: 
-- use contexts instead of writing it in the script
-- pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
-- select the options "clear workspace context" and "clear launch configs", if it does not affect the test
-- where possible avoid selections, especially the ".*" star selections
-- make a refresh or key-type f5 before every action in project explorer
-- use the simple copy paste commands for copying files, not those in the menu
-- record launches additionally to defining launch configs by pressing "Capture" button during a running launch in AUT
-- also check test cases in maven script very often
-- in graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window
+- Use contexts instead of writing it in the script
+- Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
+- Select the options "clear workspace context" and "clear launch configs", if it does not affect the test
+- Where possible avoid selections, especially the ".*" star selections
+- Make a refresh or key-type f5 before every action in project explorer
+- Use the simple copy paste commands for copying files, not those in the menu
+- Record launches additionally to defining launch configs by pressing "Capture" button during a running launch in AUT
+- Also check test cases in maven script very often
+- In graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window
 
 
 For more Help check the Community: https://www.eclipse.org/forums/index.php/f/281/
