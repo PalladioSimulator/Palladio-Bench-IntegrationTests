@@ -1,5 +1,6 @@
 # Palladio-Build-IntegrationTests
 
+
 Preparation:
 
 - Download RCPTT from https://www.eclipse.org/rcptt/download/
@@ -10,6 +11,7 @@ Preparation:
 - Downloading Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 - Create new AUT in RCPTT with Palladio Bench 
 
+
 Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 
 - Generate pom.xml (right click on project > RCPTT > generate pom.xml), for more infos check https://www.eclipse.org/rcptt/documentation/userguide/maven/
@@ -18,6 +20,7 @@ Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 - SCM for GIT-Import: http://maven.apache.org/scm/git.html
 - SCM Plugin - Lists of goal commands : https://maven.apache.org/scm/maven-scm-plugin/index.html
 - Example for pom.xml under https://raw.githubusercontent.com/PalladioSimulator/Palladio-Build-IntegrationTests/master/org.palladiosimulator.product.tests.ui/pom.xml
+
 
 Procedure for a new Testcase:
 
@@ -37,6 +40,7 @@ Running maven script:
 - Right click on pom.xml > Run as > Run Configurations > Create new Maven Build Configuration with goal "verify" (check Screenshots for details about errors) > Run
 - Check console for the results
 
+
 Tips to make the tests more robust: 
 - use contexts instead of writing it in the script
 - pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
@@ -47,6 +51,7 @@ Tips to make the tests more robust:
 - record launches additionally to defining launch configs by pressing "Capture" button during a running launch in AUT
 - also check test cases in maven script very often
 - in graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window
+
 
 
 For more Help check the Community: https://www.eclipse.org/forums/index.php/f/281/
