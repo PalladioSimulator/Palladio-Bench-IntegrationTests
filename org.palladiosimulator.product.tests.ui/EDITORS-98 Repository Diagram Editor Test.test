@@ -1,0 +1,553 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _3NzicB7-EeizwOOeaV1e7w,_RZbpMB78EeizwOOeaV1e7w
+Element-Name: EDITORS-98 Repository Diagram Editor Test
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-98
+Id: _ETem8B75EeizwOOeaV1e7w
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 3/6/18 12:42 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+PCM Instanz starten, Repository Diagramm from scratch erstellen und wizard folgen, Repository Model mit "Repository Model Editor" Tree Editor öffnen, Basic Component "BC1" erstellen, OperationInterface "IP1" erstellen, Provided Role erstellen die die beiden verbindet, Signatur "Sig1" zu Interface "IP1" hinzufügen mit Rückgabetyp "bool" in der properties view, "BC1" löschen, undo löschen, "IP1" löschen, undo löschen, SEFF zu "BC1" hinzufügen und "Sig1" im Dialog als Signatur wählen, SEFF Editor öffnen, Passive Ressource zu "BC1" 's PassiveResourceCompartment hinzufügen, Component Parameter zu "BC1" im Compartment hinzufügen, Variablen Beschreibung für Component Parameter hinzufügen, InfrastructureInterface "IP2" erstellen, InfrastructureProvidedRole erstellen die "BC1" mit "IP2" verbindet, Basic Component "BC2" erstellen, RequiredRole erstellen die "BC2" mit "IP1" verbindet, InfrastructureRequiredRole erstellen die "BC2" mit "IP2" verbindet; bei den Änderungen auf Elemente im EMF Tree Editor und Fehlermeldungen in der Konsole achten. 
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu -path "File/New/Modeling Project" | click
+with [get-window "New Modeling Project"] {
+    get-editbox -after [get-label "Project name:"] | set-text "Editor Test"
+    get-button Finish | click
+}
+get-view "Model Explorer" | get-tree | select "Editor Test" | get-menu -path "New/Other..." | click
+with [get-window New] {
+    get-editbox -after [get-label "Wizards:"] | set-text repo
+    get-tree | select "Other/Repository Model and Diagram - Sirius"
+    get-button "Next >" | click
+}
+with [get-window "Create Model"] {
+    get-button "Next >" | click
+    get-button Finish | click
+}
+
+
+with [get-editor "new Repository Diagram"] {
+    get-diagram -index 1 | get-edit-part -name "new Repository Diagram" | mouse-move 1030 50 -height 514 -width 1039
+    with [get-palette] {
+        with [get-palette-entry BasicComponent] {
+            mouse-move 89 14 button1 -height 23 -width 188
+            mouse-press 89 14 button1 -height 23 -width 188
+            mouse-release 89 14 button1 524288 -height 23 -width 188
+            mouse-hover 89 14 -height 23 -width 188
+            mouse-move 88 22 -height 23 -width 188
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 68 83 button1 -height 514 -width 1039
+        mouse-press 68 83 button1 -height 514 -width 1039
+        mouse-release 68 83 button1 524288 -height 514 -width 1039
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-hover 68 83 -height 514 -width 1039
+        mouse-move 82 83 -height 514 -width 1039
+        mouse-move 1034 127 -height 514 -width 1039
+    }
+    with [get-palette] {
+        with [get-palette-entry CompositeComponent] {
+            mouse-move 26 16 -height 23 -width 188
+            mouse-hover 26 16 -height 23 -width 188
+            mouse-move 36 1 -height 23 -width 188
+        }
+        get-palette-entry BasicComponent | mouse-move 58 0 -height 23 -width 188
+        with [get-palette-entry Interface] {
+            mouse-move 52 12 -height 23 -width 188
+            mouse-hover 52 12 -height 23 -width 188
+            mouse-move 52 12 button1 -height 23 -width 188
+            mouse-press 52 12 button1 -height 23 -width 188
+            mouse-release 52 12 button1 524288 -height 23 -width 188
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 405 402 -height 514 -width 1039
+        mouse-hover 405 402 -height 514 -width 1039
+        mouse-move 405 402 button1 -height 514 -width 1039
+        mouse-press 405 402 button1 -height 514 -width 1039
+        mouse-release 405 402 button1 524288 -height 514 -width 1039
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 236 343 -height 514 -width 1039
+        mouse-hover 236 343 -height 514 -width 1039
+        mouse-move 1038 213 -height 514 -width 1039
+    }
+    with [get-palette] {
+        with [get-palette-entry ProvidedRole] {
+            mouse-move 87 13 -height 23 -width 188
+            mouse-hover 87 13 -height 23 -width 188
+            mouse-move 87 13 button1 -height 23 -width 188
+            mouse-press 87 13 button1 -height 23 -width 188
+            mouse-release 87 13 button1 524288 -height 23 -width 188
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 258 203 -height 514 -width 1039
+        with [get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent1"] {
+            mouse-move 111 4 -height 200 -width 186
+            get-edit-part -className DNodeContainerNameEditPart | mouse-hover 88 14 -height 26 -width 138
+            mouse-move 111 4 button1 -height 200 -width 186
+            mouse-press 111 4 button1 -height 200 -width 186
+            mouse-release 111 4 button1 524288 -height 200 -width 186
+            mouse-hover 111 4 -height 200 -width 186
+            mouse-move 112 4 -height 200 -width 186
+        }
+        mouse-move 530 377 -height 514 -width 1039
+        mouse-hover 530 377 -height 514 -width 1039
+        mouse-move 507 398 -height 514 -width 1039
+        with [get-edit-part -name "<<Interface>>\n"
+            + "Interface1" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
+            mouse-move 54 4 -height 61 -width 196
+            mouse-hover 54 4 -height 61 -width 196
+            mouse-move 54 4 button1 -height 61 -width 196
+            mouse-press 54 4 button1 -height 61 -width 196
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        with [get-edit-part -name "<<Interface>>\n"
+            + "Interface1"] {
+            with [get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
+                mouse-release 54 4 button1 524288 -height 61 -width 196
+                mouse-hover 54 4 -height 61 -width 196
+                mouse-move 69 11 -height 61 -width 196
+                mouse-hover 69 11 -height 61 -width 196
+            }
+            mouse-move 149 19 -height 100 -width 200
+            mouse-hover 149 19 -height 100 -width 200
+            with [get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
+                mouse-move 30 27 button1 -height 61 -width 196
+                mouse-press 30 27 button1 -height 61 -width 196
+                mouse-release 30 27 button1 524288 -height 61 -width 196
+                mouse-hover 30 27 -height 61 -width 196
+            }
+        }
+        mouse-move 458 509 -height 514 -width 1039
+    }
+}
+with [get-view Properties] {
+    get-button -index 4 | click
+    with [get-table] {
+        select method1 -column Method | activate-cell-edit -column 1 -type MouseClickSelection
+        get-button "..." | click
+    }
+}
+
+with [get-window "Select Object..."] {
+    get-tree | select "PrimitiveDataTypes.*/BOOL <PrimitiveDataType> "
+    get-button OK | click
+}
+get-view Properties | get-table | apply-cell-edit -deactivate
+with [get-editor "new Repository Diagram" | get-diagram -index 1] {
+    with [get-edit-part -name "new Repository Diagram"] {
+        mouse-move 120 505 -height 514 -width 1039
+        mouse-hover 120 505 -height 514 -width 1039
+        mouse-move 109 288 -height 514 -width 1039
+        with [get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent1"] {
+            mouse-move 40 199 -height 200 -width 186
+            with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+                get-edit-part -name ResourceRequiredRoles | mouse-move 40 0 -height 40 -width 182
+                get-edit-part -name ComponentParameterCompartment | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 49 8 -height 40 
+                    -width 182
+                get-edit-part -name PassiveResourcesCompartment | mouse-move 65 1 -height 40 -width 182
+                with [get-edit-part -name SEFFCompartment | get-edit-part 
+                    -className DNodeListViewNodeListCompartmentEditPart] {
+                    mouse-move 71 11 button1 -height 17 -width 182
+                    mouse-press 71 11 button1 -height 17 -width 182
+                    mouse-release 71 11 button1 524288 -height 17 -width 182
+                    mouse-hover 71 11 -height 17 -width 182
+                }
+            }
+            mouse-move 46 31 -height 200 -width 186
+            with [get-edit-part -className DNodeContainerNameEditPart] {
+                mouse-move 47 14 button1 -height 26 -width 138
+                mouse-press 47 14 button1 -height 26 -width 138
+                mouse-release 47 14 button1 524288 -height 26 -width 138
+                mouse-hover 47 14 -height 26 -width 138
+            }
+        }
+    }
+    key-type Del
+    get-edit-part -name "new Repository Diagram" | mouse-move 32 0 -height 514 -width 1039
+}
+get-menu -path "Edit/Undo Delete" | click
+with [get-editor "new Repository Diagram" | get-diagram -index 1] {
+    with [get-edit-part -name "new Repository Diagram"] {
+        mouse-move 400 469 -height 514 -width 1039
+        with [get-edit-part -name "<<Interface>>\n"
+            + "Interface1"] {
+            mouse-move 151 20 button1 -height 100 -width 200
+            mouse-press 151 20 button1 -height 100 -width 200
+            mouse-release 151 20 button1 524288 -height 100 -width 200
+            mouse-hover 151 20 -height 100 -width 200
+        }
+    }
+    key-type Del
+    with [get-edit-part -name "new Repository Diagram"] {
+        mouse-move 222 286 -height 514 -width 1039
+        get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+            | get-edit-part -name ResourceRequiredRoles | get-edit-part 
+            -className DNodeListViewNodeListCompartmentEditPart | mouse-move 103 11 -height 16 -width 182
+    }
+}
+get-menu -path "Edit/Undo Delete" | click
+with [get-editor "new Repository Diagram" | get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+    with [get-edit-part -name "<<BasicComponent>>\n"
+        + "BasicComponent1"] {
+        with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+            -name SEFFCompartment] {
+            mouse-move 77 19 button1 -height 40 -width 182
+            mouse-press 77 19 button1 -height 40 -width 182
+            mouse-release 77 19 button1 524288 -height 40 -width 182
+            mouse-hover 77 19 -height 40 -width 182
+        }
+        mouse-move 113 31 -height 200 -width 186
+        with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+            -name SEFFCompartment | get-popup-bar-item -path 0] {
+            mouse-move 13 9 button1 -height 20 -width 30
+            mouse-press 13 9 button1 -height 20 -width 30
+            mouse-move 14 9 -mask 524288 -height 20 -width 30
+        }
+    }
+    mouse-drag 208 96 button1 524288 -height 514 -width 1039
+    mouse-release 208 96 button1 524288 -height 514 -width 1039
+}
+
+get-editor "new Repository Diagram" | get-diagram -index 1 | get-edit-part -name "new Repository Diagram" 
+    | get-edit-part -name "<<BasicComponent>>\n"
+    + "BasicComponent1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+    -name SEFFCompartment | get-popup-bar-item -path 0 | mouse-hover 14 9 -height 20 -width 30
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "New Repository <Repository>.*/Interface1 <OperationInterface>.*/method1 <OperationSignature>.*"
+    get-button OK | click
+}
+with [get-editor "new Repository Diagram" | get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+    with [get-edit-part -name "<<Interface>>\n"
+        + "Interface1" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
+        mouse-move 178 46 -height 61 -width 196
+        mouse-hover 178 46 -height 61 -width 196
+        mouse-move 180 52 -height 61 -width 196
+        mouse-hover 180 52 -height 61 -width 196
+    }
+    mouse-move 258 237 -height 514 -width 1039
+    with [get-edit-part -name "<<BasicComponent>>\n"
+        + "BasicComponent1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        get-edit-part -name ComponentParameterCompartment | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 116 2 -height 40 -width 182
+        with [get-edit-part -name PassiveResourcesCompartment] {
+            with [get-edit-part -className DNodeListViewNodeListCompartmentEditPart] {
+                mouse-move 100 5 -height 16 -width 182
+                mouse-hover 100 5 -height 16 -width 182
+                mouse-move 100 5 button1 -height 16 -width 182
+                mouse-press 100 5 button1 -height 16 -width 182
+                mouse-release 100 5 button1 524288 -height 16 -width 182
+                mouse-hover 100 5 -height 16 -width 182
+            }
+            mouse-move 122 1 -height 40 -width 182
+            with [get-popup-bar-item -path 0] {
+                mouse-move 18 12 button1 -height 20 -width 30
+                mouse-press 18 12 button1 -height 20 -width 30
+                mouse-release 18 12 button1 524288 -height 20 -width 30
+                mouse-hover 18 12 -height 20 -width 30
+            }
+        }
+    }
+}
+get-window "Edit stochastic expression" | get-group "" | get-text-viewer | type-text test
+get-editor "new Repository Diagram" | get-diagram -index 1 | get-edit-part -name "new Repository Diagram" 
+    | mouse-move 273 187 -height 514 -width 1039
+with [get-window "Edit stochastic expression"] {
+    get-group "" | get-text-viewer | key-type BackSpace -times 4
+    get-button Cancel | click
+}
+with [get-editor "new Repository Diagram" | get-diagram -index 1] {
+    with [get-edit-part -name "new Repository Diagram"] {
+        mouse-move 172 324 -height 514 -width 1039
+        mouse-hover 172 324 -height 514 -width 1039
+        mouse-move 181 287 -height 514 -width 1039
+        with [get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent1"] {
+            mouse-move 108 198 -height 201 -width 186
+            with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+                with [get-edit-part -name ResourceRequiredRoles] {
+                    with [get-edit-part -className DNodeListViewNodeListCompartmentEditPart] {
+                        mouse-move 102 1 -height 16 -width 182
+                        mouse-hover 102 1 -height 16 -width 182
+                    }
+                    mouse-move 104 1 -height 40 -width 182
+                }
+                with [get-edit-part -name ComponentParameterCompartment | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                    mouse-move 97 28 -height 40 -width 182
+                    mouse-hover 97 28 -height 40 -width 182
+                    mouse-move 97 28 button1 -height 40 -width 182
+                    mouse-press 97 28 button1 -height 40 -width 182
+                    mouse-release 97 28 button1 524288 -height 40 -width 182
+                    mouse-hover 97 28 -height 40 -width 182
+                }
+                get-edit-part -name ResourceRequiredRoles | mouse-move 118 2 -height 40 -width 182
+            }
+        }
+    }
+    get-figure -path "1/4" | mouse-hover 0 25 -height 40 -width 40
+    with [get-edit-part -name "new Repository Diagram" | get-edit-part -name "<<BasicComponent>>\n"
+        + "BasicComponent1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+        | get-edit-part -name ResourceRequiredRoles | get-popup-bar-item -path 0] {
+        mouse-move 12 14 button1 -height 20 -width 30
+        mouse-press 12 14 button1 -height 20 -width 30
+        mouse-release 12 14 button1 524288 -height 20 -width 30
+    }
+}
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "Resource Repository <ResourceRepository> /CpuInterface <ResourceInterface>.*"
+    get-button OK | click
+}
+with [get-editor "new Repository Diagram" | get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+    get-edit-part -name "<<Interface>>\n"
+        + "Interface1" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart | mouse-hover 191 39 
+        -height 61 -width 196
+    mouse-move 271 288 -height 514 -width 1039
+    with [get-edit-part -name "<<BasicComponent>>\n"
+        + "BasicComponent1"] {
+        mouse-move 196 200 -height 202 -width 236
+        with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            get-edit-part -name ResourceRequiredRoles | mouse-move 153 0 -height 41 -width 232
+            with [get-edit-part -name ComponentParameterCompartment | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 126 25 -height 40 -width 232
+                mouse-hover 126 25 -height 40 -width 232
+                mouse-move 126 25 button1 -height 40 -width 232
+                mouse-press 126 25 button1 -height 40 -width 232
+                mouse-release 126 25 button1 524288 -height 40 -width 232
+                mouse-hover 126 25 -height 40 -width 232
+                mouse-move 125 20 -height 40 -width 232
+                mouse-hover 125 20 -height 40 -width 232
+                mouse-move 125 19 -height 40 -width 232
+                mouse-hover 125 19 -height 40 -width 232
+                mouse-move 123 18 -height 40 -width 232
+                mouse-hover 123 18 -height 40 -width 232
+                mouse-move 105 18 -height 40 -width 232
+                mouse-hover 105 18 -height 40 -width 232
+                with [get-popup-bar-item -path 0] {
+                    mouse-move 13 12 button1 -height 20 -width 30
+                    mouse-press 13 12 button1 -height 20 -width 30
+                    mouse-release 13 12 button1 524288 -height 20 -width 30
+                }
+            }
+        }
+    }
+}
+with [get-window -class SetOutputVariableNameDialog] {
+    get-editbox -after [get-label "Enter Local Variable Name:"] | set-text test
+    get-button OK | click
+}
+with [get-editor "new Repository Diagram"] {
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        get-edit-part -name "<<Interface>>\n"
+            + "Interface1" | mouse-hover 116 35 -height 100 -width 200
+        mouse-move 1037 295 -height 514 -width 1039
+    }
+    with [get-palette] {
+        get-palette-entry Signature | mouse-move 26 0 -height 23 -width 188
+        with [get-palette-entry InfrastructureInterface] {
+            mouse-move 58 15 button1 -height 23 -width 188
+            mouse-press 58 15 button1 -height 23 -width 188
+            mouse-release 58 15 button1 524288 -height 23 -width 188
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 595 144 -height 514 -width 1039
+        mouse-hover 595 144 -height 514 -width 1039
+        mouse-move 602 122 button1 -height 514 -width 1039
+        mouse-press 602 122 button1 -height 514 -width 1039
+        mouse-release 602 122 button1 524288 -height 514 -width 1039
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 583 143 -height 514 -width 1039
+        mouse-hover 583 143 -height 514 -width 1039
+        mouse-move 575 142 -height 514 -width 1039
+        mouse-hover 575 142 -height 514 -width 1039
+        mouse-move 597 143 -height 514 -width 1039
+        mouse-move 1037 151 -height 514 -width 1039
+    }
+    with [get-palette] {
+        with [get-palette-entry InfrastructureProvidedRole] {
+            mouse-move 114 12 -height 23 -width 188
+            mouse-hover 114 12 -height 23 -width 188
+            mouse-move 114 12 button1 -height 23 -width 188
+            mouse-press 114 12 button1 -height 23 -width 188
+            mouse-release 114 12 button1 524288 -height 23 -width 188
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+            + "InfrastructureInterface1"] {
+            mouse-move 199 65 -height 100 -width 200
+            with [get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
+                mouse-move 149 7 -height 61 -width 196
+                mouse-hover 149 7 -height 61 -width 196
+                mouse-move 149 7 button1 -height 61 -width 196
+                mouse-press 149 7 button1 -height 61 -width 196
+                mouse-release 149 7 button1 524288 -height 61 -width 196
+                mouse-hover 149 7 -height 61 -width 196
+            }
+        }
+        mouse-move 347 156 -height 514 -width 1039
+        with [get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent1"] {
+            get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 157 0 -height 163 
+                -width 232
+            get-edit-part -className DNodeContainerNameEditPart | mouse-hover 113 24 -height 26 -width 138
+            with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+                -name SEFFCompartment] {
+                mouse-move 165 9 -height 40 -width 232
+                mouse-hover 165 9 -height 40 -width 232
+                mouse-move 165 9 button1 -height 40 -width 232
+                mouse-press 165 9 button1 -height 40 -width 232
+                mouse-release 165 9 button1 524288 -height 40 -width 232
+            }
+        }
+        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+            + "InfrastructureInterface1" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
+            mouse-move 58 4 -height 61 -width 196
+            mouse-hover 58 4 -height 61 -width 196
+            mouse-move 58 4 button1 -height 61 -width 196
+            mouse-press 58 4 button1 -height 61 -width 196
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+            + "InfrastructureInterface1" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
+            mouse-release 58 4 button1 524288 -height 61 -width 196
+            mouse-hover 58 4 -height 61 -width 196
+        }
+        mouse-move 1032 268 -height 514 -width 1039
+    }
+    with [get-palette] {
+        with [get-palette-entry BasicComponent] {
+            mouse-move 59 14 button1 -height 23 -width 188
+            mouse-press 59 14 button1 -height 23 -width 188
+            mouse-release 59 14 button1 524288 -height 23 -width 188
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 802 375 button1 -height 514 -width 1039
+        mouse-press 802 375 button1 -height 514 -width 1039
+        mouse-release 802 375 button1 524288 -height 514 -width 1039
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent2" | get-handle MoveHandle | mouse-hover 4 1 -height 200 -width 186
+        mouse-move 717 329 -height 576 -width 1039
+        mouse-hover 717 329 -height 576 -width 1039
+        mouse-move 1032 227 -height 576 -width 1039
+    }
+    with [get-palette] {
+        with [get-palette-entry RequiredRole] {
+            mouse-move 60 14 button1 -height 23 -width 188
+            mouse-press 60 14 button1 -height 23 -width 188
+            mouse-release 60 14 button1 524288 -height 23 -width 188
+            mouse-hover 60 14 -height 23 -width 188
+        }
+        get-palette-entry InfrastructureProvidedRole | mouse-move 20 17 -height 23 -width 188
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        with [get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent2"] {
+            mouse-move 142 34 -height 200 -width 186
+            with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+                -name SEFFCompartment] {
+                mouse-move 141 2 -height 40 -width 182
+                mouse-hover 141 2 -height 40 -width 182
+            }
+            mouse-move 145 31 -height 200 -width 186
+            get-edit-part -className DNodeContainerNameEditPart | mouse-hover 128 21 -height 26 -width 138
+            mouse-move 148 33 -height 200 -width 186
+            mouse-hover 148 33 -height 200 -width 186
+            mouse-move 148 33 button1 -height 200 -width 186
+            mouse-press 148 33 button1 -height 200 -width 186
+            mouse-release 148 33 button1 524288 -height 200 -width 186
+            mouse-hover 148 33 -height 200 -width 186
+            mouse-move 148 31 -height 200 -width 186
+            get-edit-part -className DNodeContainerNameEditPart | mouse-hover 120 22 -height 26 -width 138
+        }
+        mouse-move 607 446 -height 576 -width 1039
+        with [get-edit-part -name "<<Interface>>\n"
+            + "Interface1"] {
+            mouse-move 145 32 -height 100 -width 200
+            with [get-edit-part -className DNodeListNameEditPart] {
+                mouse-hover 82 11 -height 26 -width 96
+                mouse-move 82 11 button1 -height 26 -width 96
+                mouse-press 82 11 button1 -height 26 -width 96
+            }
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        with [get-edit-part -name "<<Interface>>\n"
+            + "Interface1" | get-edit-part -className DNodeListNameEditPart] {
+            mouse-release 82 11 button1 524288 -height 26 -width 96
+            mouse-hover 82 11 -height 26 -width 96
+        }
+        mouse-move 1032 310 -height 575 -width 1039
+    }
+    with [get-palette] {
+        with [get-palette-entry InfrastructureRequiredRole] {
+            mouse-move 120 18 -height 23 -width 188
+            mouse-hover 120 18 -height 23 -width 188
+            mouse-move 120 18 button1 -height 23 -width 188
+            mouse-press 120 18 button1 -height 23 -width 188
+            mouse-release 120 18 button1 524288 -height 23 -width 188
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 982 373 -height 575 -width 1039
+        with [get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 125 0 -height 161 -width 182
+            mouse-hover 125 0 -height 161 -width 182
+            mouse-move 125 0 button1 -height 161 -width 182
+            mouse-press 125 0 button1 -height 161 -width 182
+            mouse-release 125 0 button1 524288 -height 161 -width 182
+        }
+        mouse-move 688 224 -height 575 -width 1039
+        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+            + "InfrastructureInterface1"] {
+            mouse-move 107 31 -height 100 -width 200
+            with [get-edit-part -className DNodeListNameEditPart] {
+                mouse-move 103 8 button1 -height 26 -width 170
+                mouse-press 103 8 button1 -height 26 -width 170
+            }
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+            + "InfrastructureInterface1"] {
+            with [get-edit-part -className DNodeListNameEditPart] {
+                mouse-release 103 8 button1 524288 -height 26 -width 170
+                mouse-hover 103 8 -height 26 -width 170
+            }
+            mouse-move 87 34 -height 100 -width 200
+        }
+        mouse-move 300 511 -height 575 -width 1039
+    }
+}
+get-view Problems | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

@@ -1,0 +1,541 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _S-wZcB_GEei-ULwh1VW1PA,_W6Ip4B_GEei-ULwh1VW1PA
+Element-Name: EDITORS-96 ResourceEnvironment Diagram Editor Test
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-96
+Id: _kyuggB75EeizwOOeaV1e7w
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 3/6/18 12:42 PM
+Testcase-Type: ecl
+Verifications: _9gk9MCBgEei8m5u-F-BskQ
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+ResourceEnvironment Diagram erstellen, Baumeditor über ResourceEnvironment Model Editor öffnen(Änderungen werden erst nach Speichern in Baumeditor übernommen), in Diagram Editor neuen Resource Container "RC1" erstellen, neue ProcessingResource CPU für "RC1" erstellen und Attribute setzen:  processingRate: 1, schedulingPolicy: ProcessorSharing;
+ProcessingRate auf 2 setzen, auf MTTF klicken und F2 drücken(editierbar machen) , MTTF auf 1 setzen, 
+neue CPU ProcessingResourceSpecification erstellen, auswählen und löschen, neue  HDD processing resource specification erstellen mit Attributen: processingRate: 1, schedulingPolicy: FirstComeFirstServe; neue Delay processing resource specification erstellen mit Attributen:  processingRate: 1, schedulingPolicy: Delay;
+Neue LinkingResource erstellen mit Latency 0 und throughput 1; neuen resource container "RC2" erstellen, durch connector linking resource mit beiden verbinden, "Connected Resource Containers Linking Resource"	Attribut in Linking Resource gesetzt, verbindung zu "RC1" löschen, prüfen ob auch aus Attribut gelöscht;
+"RC2" löschen, prüfen ob auch aus Attribut gelöscht; mehrmaliges öffnen und schließen des diagram editors
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu -path "File/New/Modeling Project" | click
+with [get-window "New Modeling Project"] {
+    get-editbox -after [get-label "Project name:"] | set-text "Editor Test"
+    get-button Finish | click
+}
+get-button "Create a new ResourceEnvironment Model and Diagram from scratch" | click
+with [get-window "Create Model"] {
+    get-tree | select "Editor Test"
+    get-button "Next >" | click
+    get-button Finish | click
+}
+get-view "Model Explorer" | get-tree | select "Editor Test/newResourceEnvironment.resourceenvironment" | get-menu 
+    -path "Open With/Other..." | click
+get-window "Editor Selection" | get-button OK | click
+with [get-editor "new ResourceEnvironment Diagram"] {
+    click
+    get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 821 2 -height 514 
+        -width 922
+    with [get-palette] {
+        with [get-palette-entry ResourceContainer] {
+            mouse-move 66 11 button1 -height 23 -width 305
+            mouse-press 66 11 button1 -height 23 -width 305
+            mouse-release 66 11 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 101 97 button1 -height 514 -width 922
+        mouse-press 101 97 button1 -height 514 -width 922
+        mouse-release 101 97 button1 524288 -height 514 -width 922
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "ResourceContainer1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+            | mouse-hover 1 2 -height 98 -width 151
+        mouse-move 221 504 -height 514 -width 922
+    }
+}
+with [get-view Properties | get-section Properties | get-editbox -index 3] {
+    set-text-selection -offset 18 -startLine 0 -endLine 0 -endOffset 0
+    type-text RC1
+}
+with [get-editor "new ResourceEnvironment Diagram"] {
+    get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 921 268 -height 514 
+        -width 922
+    with [get-palette] {
+        with [get-palette-entry ProcessingResourceSpecification] {
+            mouse-move 117 6 -height 23 -width 305
+            mouse-hover 117 6 -height 23 -width 305
+            mouse-move 117 6 button1 -height 23 -width 305
+            mouse-press 117 6 button1 -height 23 -width 305
+            mouse-release 117 6 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 253 163 -height 514 -width 922
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 61 50 button1 -height 98 -width 151
+            mouse-press 61 50 button1 -height 98 -width 151
+            mouse-release 61 50 button1 524288 -height 98 -width 151
+        }
+    }
+}
+get-window "Select Object..." | get-tree | select "Resource Repository <ResourceRepository> "
+with [get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | get-edit-part -name "<<ResourceContainer>>\n"
+    + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+    mouse-hover 61 50 -height 98 -width 151
+    mouse-move 61 51 -height 98 -width 151
+}
+get-window "Select Object..." | get-tree 
+    | select "Resource Repository <ResourceRepository> /CPU <ProcessingResourceType>  \\[ID: _oro4gG3fEdy4YaaT-RYrLQ\\]"
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 593 512 -height 514 -width 922
+get-window "Select Object..." | get-button OK | click
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-hover 589 480 -height 514 -width 922
+get-window "Edit stochastic expression" | get-group "" | get-text-viewer | type-text 1
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 589 472 -height 514 -width 922
+get-window "Edit stochastic expression" | get-button OK | click
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "Resource Repository <ResourceRepository> /Processor Sharing <SchedulingPolicy>  \\[ID: ProcessorSharing\\]"
+    get-button OK | click
+}
+with [get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1] {
+    with [get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 566 473 -height 514 -width 922
+        mouse-hover 566 473 -height 514 -width 922
+        mouse-move 142 195 -height 514 -width 922
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1"] {
+            with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+                mouse-move 32 61 button1 -height 98 -width 231
+                mouse-press 32 61 button1 -height 98 -width 231
+                mouse-release 32 61 button1 524288 -height 98 -width 231
+                mouse-move 227 91 -height 98 -width 231
+            }
+            with [get-handle ResizeHandle -index 4] {
+                mouse-move 0 2 button1 -height 7 -width 7
+                mouse-press 0 2 button1 -height 7 -width 7
+                mouse-move 0 3 -mask 524288 -height 7 -width 7
+            }
+        }
+        mouse-drag 538 385 button1 524288 -height 514 -width 922
+        mouse-release 538 385 button1 524288 -height 514 -width 922
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 165 146 -height 291 -width 441
+            with [get-edit-part -name CPU | get-edit-part -className DNodeListViewNodeListCompartmentEditPart] {
+                mouse-move 65 52 -height 67 -width 161
+                mouse-hover 65 52 -height 67 -width 161
+                mouse-move 60 41 -height 67 -width 161
+                with [get-edit-part -name "Processing Rate: 1"] {
+                    mouse-hover 68 7 -height 13 -width 93
+                    mouse-move 68 7 button1 -height 13 -width 93
+                    mouse-press 68 7 button1 -height 13 -width 93
+                    mouse-release 68 7 button1 524288 -height 13 -width 93
+                    mouse-hover 68 7 -height 13 -width 93
+                }
+            }
+        }
+    }
+    type-text 2
+    with [get-edit-part -name "new ResourceEnvironment Diagram" | get-edit-part -name "<<ResourceContainer>>\n"
+        + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name CPU 
+        | get-edit-part -className DNodeListViewNodeListCompartmentEditPart | get-edit-part 
+        -name "Processing Rate: 1"] {
+        mouse-move 88 5 button1 -height 13 -width 93
+        mouse-press 88 5 button1 -height 13 -width 93
+        mouse-release 88 5 button1 524288 -height 13 -width 93
+        mouse-hover 88 5 -height 13 -width 93
+        activate-direct-edit
+        mouse-press 88 5 button1 -height 13 -width 93
+        mouse-release 88 5 button1 524288 -height 13 -width 93
+        mouse-press 88 5 button1 -height 13 -width 93
+        mouse-double-click 88 5 button1 -height 13 -width 93
+        mouse-release 88 5 button1 524288 -height 13 -width 93
+    }
+}
+with [get-window "Edit stochastic expression"] {
+    with [get-group "" | get-text-viewer] {
+        set-caret-pos 1 1
+        select-range 1 2 1 1
+        type-text 2
+    }
+    get-button OK | click
+}
+with [get-editor "new ResourceEnvironment Diagram"] {
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new ResourceEnvironment Diagram"] {
+            mouse-move 475 429 -height 514 -width 922
+            mouse-hover 475 429 -height 514 -width 922
+            with [get-edit-part -name "<<ResourceContainer>>\n"
+                + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+                -name CPU] {
+                mouse-move 41 94 -height 96 -width 165
+                with [get-edit-part -className DNodeListViewNodeListCompartmentEditPart | get-edit-part 
+                    -name "MTTF: 0.0"] {
+                    mouse-move 23 7 button1 -height 13 -width 47
+                    mouse-press 23 7 button1 -height 13 -width 47
+                    mouse-release 23 7 button1 524288 -height 13 -width 47
+                    mouse-hover 23 7 -height 13 -width 47
+                }
+            }
+        }
+        key-type F2
+        get-edit-part -name "new ResourceEnvironment Diagram" | get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+            -name CPU | get-edit-part -className DNodeListViewNodeListCompartmentEditPart | get-edit-part 
+            -name "MTTF: 0.0" | activate-direct-edit
+    }
+    with [get-editbox] {
+        set-text 1
+        key-type Enter
+    }
+    with [get-diagram -index 1] {
+        commit-direct-edit
+        key-type Enter
+        get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 918 344 -height 514 -width 922
+    }
+    with [get-palette] {
+        with [get-palette-entry ProcessingResourceSpecification] {
+            mouse-move 48 11 -height 23 -width 305
+            mouse-hover 48 11 -height 23 -width 305
+            mouse-move 48 11 button1 -height 23 -width 305
+            mouse-press 48 11 button1 -height 23 -width 305
+            mouse-release 48 11 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | get-edit-part 
+        -name "<<ResourceContainer>>\n"
+        + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 317 126 -height 291 -width 441
+        mouse-hover 317 126 -height 291 -width 441
+        mouse-move 317 126 button1 -height 291 -width 441
+        mouse-press 317 126 button1 -height 291 -width 441
+        mouse-release 317 126 button1 524288 -height 291 -width 441
+    }
+}
+get-window "Select Object..." | get-tree 
+    | select "Resource Repository <ResourceRepository> /CPU <ProcessingResourceType>  \\[ID: _oro4gG3fEdy4YaaT-RYrLQ\\]"
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 558 512 -height 514 -width 922
+get-window "Select Object..." | get-button OK | click
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-hover 583 483 -height 514 -width 922
+get-window "Edit stochastic expression" | get-group "" | get-text-viewer | type-text 1
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 527 478 -height 514 -width 922
+get-window "Edit stochastic expression" | get-button OK | click
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "Resource Repository <ResourceRepository> /Processor Sharing <SchedulingPolicy>  \\[ID: ProcessorSharing\\]"
+    get-button OK | click
+}
+with [get-editor "new ResourceEnvironment Diagram"] {
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new ResourceEnvironment Diagram"] {
+            mouse-move 450 399 -height 514 -width 922
+            with [get-edit-part -name "<<ResourceContainer>>\n"
+                + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+                mouse-move 347 275 -height 291 -width 441
+                mouse-hover 347 275 -height 291 -width 441
+                mouse-move 365 222 -height 291 -width 441
+                with [get-edit-part -name CPU -index 1] {
+                    mouse-move 33 15 button1 -height 96 -width 165
+                    mouse-press 33 15 button1 -height 96 -width 165
+                    mouse-release 33 15 button1 524288 -height 96 -width 165
+                    get-edit-part -className DNodeListName2EditPart | mouse-hover 16 10 -height 16 -width 40
+                    activate-direct-edit
+                }
+            }
+        }
+        key-type Del
+        get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 909 287 -height 514 -width 922
+    }
+    with [get-palette] {
+        with [get-palette-entry ProcessingResourceSpecification] {
+            mouse-move 81 11 button1 -height 23 -width 305
+            mouse-press 81 11 button1 -height 23 -width 305
+            mouse-release 81 11 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | get-edit-part 
+        -name "<<ResourceContainer>>\n"
+        + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 315 161 button1 -height 291 -width 441
+        mouse-press 315 161 button1 -height 291 -width 441
+        mouse-release 315 161 button1 524288 -height 291 -width 441
+    }
+}
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "Resource Repository <ResourceRepository> /HDD <ProcessingResourceType>  \\[ID: _BIjHoQ3KEdyouMqirZIhzQ\\]"
+    get-button OK | click
+}
+with [get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram"] {
+    mouse-move 574 475 -height 514 -width 922
+    mouse-hover 574 475 -height 514 -width 922
+    mouse-move 547 471 -height 514 -width 922
+}
+with [get-window "Edit stochastic expression"] {
+    get-group "" | get-text-viewer | type-text 1
+    get-button OK | click
+}
+get-window "Select Object..." | get-tree 
+    | select "Resource Repository <ResourceRepository> /First-Come-First-Serve <SchedulingPolicy>  \\[ID: FCFS\\]"
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 569 512 -height 514 -width 922
+get-window "Select Object..." | get-button OK | click
+with [get-editor "new ResourceEnvironment Diagram"] {
+    get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 917 304 -height 514 
+        -width 922
+    with [get-palette] {
+        with [get-palette-entry ProcessingResourceSpecification] {
+            mouse-move 98 12 button1 -height 23 -width 305
+            mouse-press 98 12 button1 -height 23 -width 305
+            mouse-release 98 12 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 544 254 -height 514 -width 922
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 146 215 button1 -height 291 -width 441
+            mouse-press 146 215 button1 -height 291 -width 441
+            mouse-release 146 215 button1 524288 -height 291 -width 441
+        }
+    }
+}
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "Resource Repository <ResourceRepository> /DELAY <ProcessingResourceType>  \\[ID: _nvHX4KkREdyEA_b89s7q9w\\]"
+    get-button OK | click
+}
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 285 471 -height 514 -width 922
+with [get-window "Edit stochastic expression"] {
+    get-group "" | get-text-viewer | type-text 1
+    get-button OK | click
+}
+get-window "Select Object..." | get-tree 
+    | select "Resource Repository <ResourceRepository> /Delay <SchedulingPolicy>  \\[ID: Delay\\]"
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 613 511 -height 514 -width 922
+get-window "Select Object..." | get-button OK | click
+with [get-editor "new ResourceEnvironment Diagram"] {
+    get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 891 513 -height 514 
+        -width 922
+    with [get-palette] {
+        with [get-palette-entry "Linking Resource"] {
+            mouse-move 64 12 button1 -height 23 -width 305
+            mouse-press 64 12 button1 -height 23 -width 305
+            mouse-release 64 12 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 717 225 button1 -height 514 -width 922
+        mouse-press 717 225 button1 -height 514 -width 922
+        mouse-release 717 225 button1 524288 -height 514 -width 922
+        mouse-hover 717 225 -height 514 -width 922
+    }
+}
+get-window "Edit stochastic expression" | get-group "" | get-text-viewer | type-text 0
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 715 226 -height 514 -width 922
+get-window "Edit stochastic expression" | get-button OK | click
+get-window "Edit stochastic expression" | get-group "" | get-text-viewer | type-text 1
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 557 472 -height 514 -width 922
+get-window "Edit stochastic expression" | get-button OK | click
+with [get-editor "new ResourceEnvironment Diagram"] {
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 849 329 -height 514 -width 935
+        get-edit-part -name "<<LinkingResource>>\n"
+            + "LinkingResource1" | mouse-move 206 9 -height 103 -width 219
+    }
+    with [get-palette] {
+        with [get-palette-entry ResourceContainer] {
+            mouse-move 64 7 button1 -height 23 -width 305
+            mouse-press 64 7 button1 -height 23 -width 305
+            mouse-release 64 7 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 697 88 button1 -height 514 -width 935
+        mouse-press 697 88 button1 -height 514 -width 935
+        mouse-release 697 88 button1 524288 -height 514 -width 935
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "ResourceContainer2" | get-handle ResizeHandle -index 6 | mouse-hover 6 2 -height 7 -width 7
+        mouse-move 572 513 -height 514 -width 934
+    }
+}
+with [get-view Properties | get-section Properties | get-editbox -index 3] {
+    set-text-selection -offset 18 -startLine 0 -endLine 0 -endOffset 0
+    type-text RC2
+    key-type Enter
+}
+with [get-editor "new ResourceEnvironment Diagram"] {
+    get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 908 441 -height 514 
+        -width 934
+    with [get-palette] {
+        with [get-palette-entry Connector] {
+            mouse-move 32 10 -height 23 -width 305
+            mouse-hover 32 10 -height 23 -width 305
+            mouse-move 32 10 button1 -height 23 -width 305
+            mouse-press 32 10 button1 -height 23 -width 305
+            mouse-release 32 10 button1 524288 -height 23 -width 305
+            mouse-move 9 18 -height 23 -width 305
+            mouse-hover 9 18 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 849 171 -height 514 -width 934
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 92 21 -height 98 -width 151
+            mouse-hover 92 21 -height 98 -width 151
+        }
+        mouse-move 543 127 -height 514 -width 934
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 386 44 -height 291 -width 441
+            mouse-hover 386 44 -height 291 -width 441
+        }
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 41 13 -height 98 -width 151
+            mouse-hover 41 13 -height 98 -width 151
+        }
+        mouse-move 749 223 -height 514 -width 934
+        with [get-edit-part -name "<<LinkingResource>>\n"
+            + "LinkingResource1"] {
+            mouse-move 14 26 -height 103 -width 219
+            mouse-hover 14 26 -height 103 -width 219
+            mouse-move 14 26 button1 -height 103 -width 219
+            mouse-press 14 26 button1 -height 103 -width 219
+            mouse-release 14 26 button1 524288 -height 103 -width 219
+            mouse-hover 14 26 -height 103 -width 219
+        }
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 222 20 button1 -height 291 -width 441
+            mouse-press 222 20 button1 -height 291 -width 441
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+            | mouse-release 222 20 button1 524288 -height 291 -width 441
+        mouse-move 758 200 -height 514 -width 934
+    }
+    with [get-palette | get-palette-entry Connector] {
+        mouse-move 43 5 button1 -height 23 -width 305
+        mouse-press 43 5 button1 -height 23 -width 305
+        mouse-release 43 5 button1 524288 -height 23 -width 305
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 729 224 -height 514 -width 934
+        with [get-edit-part -name "<<LinkingResource>>\n"
+            + "LinkingResource1"] {
+            mouse-move 23 7 button1 -height 103 -width 219
+            mouse-press 23 7 button1 -height 103 -width 219
+            mouse-release 23 7 button1 524288 -height 103 -width 219
+        }
+        mouse-move 738 202 -height 514 -width 995
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 46 11 button1 -height 98 -width 151
+            mouse-press 46 11 button1 -height 98 -width 151
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-release 46 11 button1 524288 -height 98 -width 151
+            mouse-hover 46 11 -height 98 -width 151
+            mouse-move 81 36 -height 98 -width 151
+        }
+        mouse-move 916 195 -height 514 -width 934
+    }
+}
+
+with [get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1] {
+    with [get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 610 174 -height 514 -width 935
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-target-connection -path 0] {
+            mouse-move 86 74 button1 -height 166 -width 205
+            mouse-press 86 74 button1 -height 166 -width 205
+            mouse-release 87 76 button1 524288 -height 170 -width 209
+            mouse-hover 87 76 -height 170 -width 209
+        }
+        mouse-move 595 176 -height 514 -width 934
+        mouse-hover 595 176 -height 514 -width 934
+    }
+    key-type Del
+    with [get-edit-part -name "new ResourceEnvironment Diagram"] {
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 348 157 
+            -height 291 -width 441
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 64 52 button1 -height 98 -width 151
+            mouse-press 64 52 button1 -height 98 -width 151
+            mouse-release 64 52 button1 524288 -height 98 -width 151
+            mouse-hover 64 52 -height 98 -width 151
+        }
+    }
+    key-type Del
+    with [get-edit-part -name "new ResourceEnvironment Diagram"] {
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 236 83 
+            -height 291 -width 441
+        mouse-move 17 253 -height 514 -width 934
+    }
+}
+
+
+get-button "Save (M1+S)" | click
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 117 0 -height 514 -width 935
+get-editor "newResourceEnvironment.resourceenvironment" | click
+get-editor "new ResourceEnvironment Diagram" | close
+get-view "Model Explorer" | get-tree 
+    | select "Editor Test/newResourceEnvironment.resourceenvironment/Resource Environment New ResourceEnvironment/new ResourceEnvironment Diagram" 
+    | double-click
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 498 1 -height 514 -width 934
+get-editor "newResourceEnvironment.resourceenvironment" | click
+get-editor "new ResourceEnvironment Diagram" | close
+get-view "Model Explorer" | get-tree 
+    | select "Editor Test/newResourceEnvironment.resourceenvironment/Resource Environment New ResourceEnvironment/new ResourceEnvironment Diagram" 
+    | double-click
+    
+with [get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram"] {
+    mouse-move 846 328 -height 514 -width 934
+    with [get-edit-part -name "<<LinkingResource>>\n"
+        + "LinkingResource1"] {
+        mouse-move 19 16 button1 -height 103 -width 219
+        mouse-press 19 16 button1 -height 103 -width 219
+        mouse-release 19 16 button1 524288 -height 103 -width 219
+        mouse-hover 19 16 -height 103 -width 219
+    }
+    mouse-move 553 363 -height 514 -width 935
+    mouse-move 260 512 -height 514 -width 935
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

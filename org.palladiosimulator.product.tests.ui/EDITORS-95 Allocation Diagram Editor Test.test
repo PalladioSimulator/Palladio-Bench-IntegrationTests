@@ -1,0 +1,420 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _mryX8CB6EeiUEJ8dzl1Q8A,_p14VYCB6EeiUEJ8dzl1Q8A
+Element-Name: EDITORS-95 Allocation Diagram Editor Test
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-95
+Id: _tsogcB75EeizwOOeaV1e7w
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 3/6/18 12:42 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Repository Model and Diagram in menu bar erstellen, Basic Component "BC1" erstellen, Speichern, resource environment diagram in menu bar erstellen, neuer Resource Container "RC1", speichern,
+System Diagram erstellen in menu bar, Assembly Context erstellen "AC1" mit Repository und Basic Component, speichern
+Allocation Diagram erstellen in menu bar, mit vorher erstellter ResourceEnvironment, Repository und System, enthält erstellte ResourceContainer
+Baumeditor für Allocation Model mittels "Allocation Model Editor" öffnen
+neuer Allocation Context  "ALC1" in "RC1" mit Assembly Context "AC1", speichern
+In ResourceEnvironment Diagram Editor neuen ResourceContainer "RC2" erstellen und speichern, in AllocationDiagramEditor sollte dieser auch erscheinen; 
+In ResourceEnironment Diagram Editor "RC2" löschen, und speichern, in AllocationDiagram mit X markiert
+Rückgängig machen mit strg+z, und speichern, in AllocationDiagram verschwindet die X Markierung.
+In Allocation Diagram Editor den Allocation Context löschen, speichern, verschwindet von Diagram und Model(bleibt derzeit noch).
+Rückgängig machen mit strg+z und speichern, AllocationContext erscheint wieder in Diagram und Model
+In Allocation Diagram Editor einen Resource Container löschen, speichern, verschwindet von Allocation Diagram Editor und ResourceEnvironment Diagram Editor
+Rückgängig machen mit strg+z und speichern
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu -path "File/New/Modeling Project" | click
+with [get-window "New Modeling Project"] {
+    get-editbox -after [get-label "Project name:"] | set-text "Editor Test"
+    get-button Finish | click
+}
+get-button "Create a new Repository Model and Diagram from scratch" | click
+with [get-window "Create Model"] {
+    get-tree | select "Editor Test"
+    get-button "Next >" | click
+    get-button Finish | click
+}
+with [get-editor "new Repository Diagram"] {
+    get-diagram -index 1 | get-edit-part -name "new Repository Diagram" | mouse-move 887 207 -height 514 -width 922
+    with [get-palette] {
+        with [get-palette-entry BasicComponent] {
+            mouse-move 124 19 button1 -height 23 -width 305
+            mouse-press 124 19 button1 -height 23 -width 305
+            mouse-release 124 19 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        mouse-move 84 105 button1 -height 514 -width 922
+        mouse-press 84 105 button1 -height 514 -width 922
+        mouse-release 84 105 button1 524288 -height 514 -width 922
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
+        get-edit-part -name "<<BasicComponent>>\n"
+            + "BasicComponent1" | get-handle ResizeHandle -index 6 | mouse-hover 3 4 -height 7 -width 7
+        mouse-move 67 508 -height 514 -width 922
+    }
+}
+with [get-view Properties | get-tree] {
+    select "BasicComponent1.*/Entity Name" | activate-cell-edit -column 1
+    with [get-editbox] {
+        set-text BC1
+        key-type Enter
+    }
+    apply-cell-edit -deactivate
+}
+get-button "Save All (M1+M2+S)" | click
+get-view Properties | get-tree | select "BC1.*"
+get-button "Create a new ResourceEnvironment Model and Diagram from scratch" | click
+with [get-window "Create Model"] {
+    get-tree | select "Editor Test"
+    get-button "Next >" | click
+    get-button Finish | click
+}
+with [get-editor "new ResourceEnvironment Diagram"] {
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 1 474 -height 514 -width 922
+        mouse-move 912 474 -height 514 -width 922
+    }
+    with [get-palette] {
+        with [get-palette-entry ResourceContainer] {
+            mouse-move 90 12 button1 -height 23 -width 305
+            mouse-press 90 12 button1 -height 23 -width 305
+            mouse-release 90 12 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 45 78 button1 -height 514 -width 922
+        mouse-press 45 78 button1 -height 514 -width 922
+        mouse-release 45 78 button1 524288 -height 514 -width 922
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "ResourceContainer1" | get-handle ResizeHandle -index 6 | mouse-hover 4 2 -height 7 -width 7
+        mouse-move 398 504 -height 514 -width 922
+    }
+}
+with [get-view Properties | get-tree] {
+    select "ResourceContainer1.*/Entity Name" | activate-cell-edit 
+        -column 1
+    with [get-editbox] {
+        set-text RC1
+        key-type Enter
+    }
+    apply-cell-edit -deactivate
+}
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 12 414 -height 514 -width 922
+get-button "Save All (M1+M2+S)" | click
+get-view Properties | get-tree | select "RC1.*"
+get-button "Create a new System Model and Diagram from scratch" | click
+with [get-window "Create Model"] {
+    get-tree | select "Editor Test"
+    get-button "Next >" | click
+    get-button Finish | click
+}
+with [get-editor "new Assembly Diagram"] {
+    with [get-palette] {
+        with [get-palette-entry AssemblyContext] {
+            mouse-move 55 11 button1 -height 22 -width 305
+            mouse-press 55 11 button1 -height 22 -width 305
+            mouse-release 55 11 button1 524288 -height 22 -width 305
+            mouse-move 12 8 -height 22 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Assembly Diagram" | get-edit-part -name "<<System>>\n"
+        + "New System" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 58 51 button1 -height 68 -width 148
+        mouse-press 58 51 button1 -height 68 -width 148
+        mouse-release 58 51 button1 524288 -height 68 -width 148
+    }
+}
+get-window "Select Object..." | get-tree | select "New Repository.*"
+with [get-editor "new Assembly Diagram" | get-diagram -index 1 | get-edit-part -name "new Assembly Diagram"] {
+    get-edit-part -name "<<System>>\n"
+        + "New System" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+        | mouse-hover 58 51 -height 68 -width 148
+    mouse-move 174 105 -height 514 -width 922
+}
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "New Repository.*/BC1.*"
+    get-button OK | click
+}
+with [get-editor "new Assembly Diagram" | get-diagram -index 1 | get-edit-part -name "new Assembly Diagram"] {
+    mouse-hover 584 482 -height 514 -width 922
+    mouse-move 600 508 -height 514 -width 922
+}
+with [get-view Properties | get-tree] {
+    select "Assembly Context Assembly_BC1/Entity Name" | activate-cell-edit -column 1
+    with [get-editbox] {
+        set-text AC1
+        key-type Enter
+    }
+    apply-cell-edit -deactivate
+}
+
+get-button "Save All (M1+M2+S)" | click
+get-button "Create a new Allocation Model and Diagram from scratch" | click
+with [get-window "Create Model"] {
+    get-tree | select "Editor Test"
+    with [get-button "Next >"] {
+        click
+        click
+    }
+    get-button Change | click
+    with [get-window "Load Resource"] {
+        get-button "Browse Workspace..." | click
+        with [get-window "File Selection"] {
+            get-tree | select "Editor Test/newResourceEnvironment.resourceenvironment"
+            get-button OK | click
+        }
+        get-button OK | click
+    }
+    get-button "Next >" | click
+    get-button Change | click
+    with [get-window "Load Resource"] {
+        get-button "Browse Workspace..." | click
+        with [get-window "File Selection"] {
+            get-tree | select "Editor Test/newAssembly.system"
+            get-button OK | click
+        }
+        get-button OK | click
+    }
+    get-button Finish | click
+}
+
+
+get-view "Model Explorer" | get-tree | select "Editor Test/newAllocation.allocation" | get-menu 
+    -path "Open With/Other..." | click
+with [get-window "Editor Selection"] {
+    get-tree | select "Context Model Editor"
+    get-button OK | click
+}
+with [get-editor "new Allocation Diagram"] {
+    click
+    get-diagram -index 1 | get-edit-part -name "new Allocation Diagram" | mouse-move 925 332 -height 518 -width 928
+    with [get-palette | get-palette-entry "Allocation_AssemblyContext"] {
+        mouse-move 64 14 button1 -height 22 -width 305
+        mouse-press 64 14 button1 -height 22 -width 305
+        mouse-release 64 14 button1 524288 -height 22 -width 305
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new Allocation Diagram"] {
+        mouse-move 136 75 -height 518 -width 928
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 74 42 button1 -height 68 -width 151
+            mouse-press 74 42 button1 -height 68 -width 151
+            mouse-release 74 42 button1 524288 -height 68 -width 151
+        }
+    }
+}
+get-window "Select Object..." | get-tree | select "New System.*"
+with [get-editor "new Allocation Diagram" | get-diagram -index 1 | get-edit-part -name "new Allocation Diagram"] {
+    get-edit-part -name "<<ResourceContainer>>\n"
+        + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-hover 74 42 
+        -height 68 -width 151
+    mouse-move 172 108 -height 518 -width 928
+}
+with [get-window "Select Object..."] {
+    get-tree 
+        | select "New System.*/AC1.*"
+    get-button OK | click
+}
+with [get-editor "new Allocation Diagram" | get-diagram -index 1 | get-edit-part -name "new Allocation Diagram"] {
+    mouse-hover 579 476 -height 514 -width 924
+    mouse-move 1 216 -height 514 -width 924
+}
+get-button "Save All (M1+M2+S)" | click
+with [get-editor "new ResourceEnvironment Diagram"] {
+    click
+    get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram" | mouse-move 904 257 -height 514 
+        -width 922
+    with [get-palette] {
+        with [get-palette-entry ResourceContainer] {
+            mouse-move 125 9 button1 -height 23 -width 305
+            mouse-press 125 9 button1 -height 23 -width 305
+            mouse-release 125 9 button1 524288 -height 23 -width 305
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 362 115 button1 -height 514 -width 922
+        mouse-press 362 115 button1 -height 514 -width 922
+        mouse-release 362 115 button1 524288 -height 514 -width 922
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "ResourceContainer2" | get-handle ResizeHandle -index 6 | mouse-hover 6 4 -height 7 -width 7
+        mouse-move 333 512 -height 514 -width 922
+    }
+}
+with [get-view Properties | get-tree] {
+    select "ResourceContainer2.*/Entity Name" | activate-cell-edit 
+        -column 1
+    with [get-editbox] {
+        set-text RC2
+        key-type Enter
+    }
+    apply-cell-edit -deactivate
+}
+get-editor "new ResourceEnvironment Diagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ResourceEnvironment Diagram" | mouse-move 1 392 -height 514 -width 922
+get-button "Save All (M1+M2+S)" | click
+get-view Properties | get-tree | select "RC2.*"
+with [get-editor "new Allocation Diagram"] {
+    click
+    with [get-diagram -index 1 | get-edit-part -name "new Allocation Diagram"] {
+        mouse-move 553 255 -height 514 -width 924
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 71 29 button1 -height 68 -width 151
+            mouse-press 71 29 button1 -height 68 -width 151
+            mouse-release 71 29 button1 524288 -height 68 -width 151
+            mouse-hover 71 29 -height 68 -width 151
+        }
+        mouse-move 237 37 -height 514 -width 924
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 223 27 
+            -height 116 -width 228
+    }
+}
+with [get-editor "new ResourceEnvironment Diagram"] {
+    click
+    with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
+        mouse-move 353 108 -height 514 -width 922
+        with [get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2"] {
+            with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+                mouse-move 47 48 button1 -height 98 -width 151
+                mouse-press 47 48 button1 -height 98 -width 151
+                mouse-release 47 48 button1 524288 -height 98 -width 151
+                mouse-hover 47 48 -height 98 -width 151
+            }
+            activate-direct-edit
+            get-edit-part -className DNodeContainerNameEditPart | activate-direct-edit
+        }
+    }
+    get-editbox | set-text ""
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new ResourceEnvironment Diagram" | get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 11 68 button1 -height 98 -width 148
+            mouse-press 11 68 button1 -height 98 -width 148
+        }
+        commit-direct-edit
+        get-edit-part -name "new ResourceEnvironment Diagram" | get-edit-part -name "<<ResourceContainer>>\n" 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+            | mouse-release 11 68 button1 524288 -height 98 -width 151
+        key-type Del
+        with [get-edit-part -name "new ResourceEnvironment Diagram"] {
+            mouse-hover 371 183 -height 514 -width 922
+            mouse-move 664 3 -height 514 -width 922
+        }
+    }
+}
+get-button "Save All (M1+M2+S)" | click
+get-editor "new Allocation Diagram" | click
+with [get-editor "new ResourceEnvironment Diagram"] {
+    click
+    get-diagram -index 1 | key-type "M1+z"
+}
+get-button "Save All (M1+M2+S)" | click
+with [get-editor "new Allocation Diagram"] {
+    click
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new Allocation Diagram" | get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 225 46 -height 116 -width 228
+            with [get-edit-part -name "<<Allocation>>\n"
+                + "Allocation_AC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 97 39 button1 -height 68 -width 148
+                mouse-press 97 39 button1 -height 68 -width 148
+                mouse-release 97 39 button1 524288 -height 68 -width 148
+                mouse-hover 97 39 -height 68 -width 148
+            }
+        }
+        key-type Del
+    }
+    get-diagram -index 1 | get-edit-part -name "new Allocation Diagram" | get-edit-part -name "<<ResourceContainer>>\n"
+        + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 17 1 
+        -height 68 -width 151
+}
+get-button "Save All (M1+M2+S)" | click
+with [get-editor "newAllocation.allocation"] {
+    click
+    get-tree | select "platform:\\/resource\\/Editor%20Test\\/newAllocation.allocation/Allocation New Allocation"
+}
+with [get-editor "new Allocation Diagram"] {
+    click
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new Allocation Diagram"] {
+            mouse-move 471 83 -height 518 -width 924
+            mouse-hover 471 83 -height 518 -width 924
+        }
+        key-type "M1+z"
+    }
+    get-diagram -index 1 | get-edit-part -name "new Allocation Diagram" | mouse-move 326 2 -height 514 -width 924
+}
+get-button "Save All (M1+M2+S)" | click
+with [get-editor "new Allocation Diagram" | get-diagram -index 1] {
+    with [get-edit-part -name "new Allocation Diagram"] {
+        mouse-move 460 260 -height 514 -width 924
+        with [get-edit-part -name "<<ResourceContainer>>\n" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 85 40 button1 -height 68 -width 151
+            mouse-press 85 40 button1 -height 68 -width 151
+            mouse-release 85 40 button1 524288 -height 68 -width 151
+            mouse-move 85 36 -height 68 -width 151
+            mouse-hover 85 36 -height 68 -width 151
+        }
+    }
+    key-type Del
+    with [get-edit-part -name "new Allocation Diagram"] {
+        mouse-move 483 276 -height 514 -width 924
+        mouse-hover 483 276 -height 514 -width 924
+        mouse-move 262 87 -height 514 -width 924
+        get-edit-part -name "<<ResourceContainer>>\n"
+            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
+            -name "<<Allocation>>\n"
+            + "Allocation_AC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | mouse-move 134 2 -height 68 -width 148
+    }
+}
+get-button "Save All (M1+M2+S)" | click
+get-editor "new ResourceEnvironment Diagram" | click
+with [get-editor "new Allocation Diagram"] {
+    click
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new Allocation Diagram"] {
+            mouse-move 539 46 -height 514 -width 924
+            mouse-hover 539 46 -height 514 -width 924
+        }
+        key-type "M1+z"
+    }
+    get-diagram -index 1 | get-edit-part -name "new Allocation Diagram" | mouse-move 477 4 -height 514 -width 924
+}
+get-button "Save All (M1+M2+S)" | click
+with [get-editor "new Allocation Diagram" | get-diagram -index 1 | get-edit-part -name "new Allocation Diagram"] {
+    get-edit-part -name "<<ResourceContainer>>\n"
+        + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 70 90 
+        -height 116 -width 228
+    mouse-move 460 292 -height 514 -width 924
+    with [get-edit-part -name "<<ResourceContainer>>\n" | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 43 32 button1 -height 68 -width 151
+        mouse-press 43 32 button1 -height 68 -width 151
+        mouse-release 43 32 button1 524288 -height 68 -width 151
+        mouse-hover 43 32 -height 68 -width 151
+    }
+    get-edit-part -name "<<ResourceContainer>>\n"
+        + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 1 64 
+        -height 116 -width 228
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
