@@ -1,16 +1,19 @@
 # Palladio-Build-IntegrationTests
 
+
 Preparation:
 
 - Download RCPTT from https://www.eclipse.org/rcptt/download/
 - RCPTT Documentation at https://www.eclipse.org/rcptt/documentation/userguide/getstarted/
 - Create new GIT-Project e.g. https://github.com/PalladioSimulator/Palladio-Build-IntegrationTests
 - Create new RCPTT Project
-- Share Project in GIT (right click on Project > Team > Share Project...) and Initial Commit (right click on Project > Team > Commit)
+- Share Project in GIT (right click on Project > Team > Share Project...) and Initial Commit 
+(right click on Project > Team > Commit)
 - Downloading Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 - Create new AUT in RCPTT with Palladio Bench 
 
-Automating RCPTT Testing in Maven Builds with the RCPTT Maven Plugins:
+
+Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 
 - Generate pom.xml (right click on project > RCPTT > generate pom.xml), for more infos check https://www.eclipse.org/rcptt/documentation/userguide/maven/
 - Configurate pom.xml (packaging as "rcpttTest", linking AUT), for more infos check https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
@@ -18,6 +21,7 @@ Automating RCPTT Testing in Maven Builds with the RCPTT Maven Plugins:
 - SCM for GIT-Import: http://maven.apache.org/scm/git.html
 - SCM Plugin - Lists of goal commands : https://maven.apache.org/scm/maven-scm-plugin/index.html
 - Example for pom.xml under https://raw.githubusercontent.com/PalladioSimulator/Palladio-Build-IntegrationTests/master/org.palladiosimulator.product.tests.ui/pom.xml
+
 
 Procedure for a new Testcase:
 
@@ -32,9 +36,22 @@ Procedure for a new Testcase:
 - To analyse your script and run it step by step use DEBUG perspective
 
 
-Running maven script:
+Running Maven Script:
 - Install "m2e - Maven integration for Eclipse" under Help > install new software
 - Right click on pom.xml > Run as > Run Configurations > Create new Maven Build Configuration with goal "verify" (check Screenshots for details about errors) > Run
 - Check console for the results
+
+
+Tips to make the Tests more robust: 
+- Use contexts instead of writing it in the script
+- Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
+- Select the options "clear workspace context" and "clear launch configs", if it does not affect the test
+- Where possible avoid selections, especially the ".*" star selections
+- Make a refresh or key-type f5 before every action in project explorer
+- Use the simple copy paste commands for copying files, not those in the menu
+- Record launches additionally to defining launch configs by pressing "Capture" button during a running launch in AUT
+- Also check test cases in maven script very often
+- In graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window
+
 
 For more Help check the Community: https://www.eclipse.org/forums/index.php/f/281/
