@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-94
 Id: _yhy4kB75EeizwOOeaV1e7w
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/6/18 12:42 PM
+Save-Time: 3/6/18 5:25 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -487,8 +487,6 @@ with [get-editor "Seff Diagram"] {
             mouse-move 42 1 -height 23 -width 305
             mouse-move 31 22 -height 23 -width 305
         }
-        get-palette-entry AquireAction | mouse-move 31 22 -height 23 -width 305
-        get-palette-entry ReleaseAction | mouse-move 42 22 -height 23 -width 305
         with [get-palette-entry LoopAction] {
             mouse-move 56 3 -height 23 -width 305
             mouse-hover 56 3 -height 23 -width 305
@@ -1091,7 +1089,6 @@ with [get-editor "Seff Diagram"] {
         }
     }
     with [get-palette] {
-        get-palette-entry "Synchronisation Point" | mouse-move 59 0 -height 23 -width 305
         with [get-palette-entry "Resource Demanding Behaviour"] {
             mouse-move 59 18 button1 -height 23 -width 305
             mouse-press 59 18 button1 -height 23 -width 305

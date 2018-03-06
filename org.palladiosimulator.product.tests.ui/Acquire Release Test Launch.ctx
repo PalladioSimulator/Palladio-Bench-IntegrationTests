@@ -2,14 +2,14 @@
 Format-Version: 1.0
 Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
-Debug-NoLaunchShortcuts: false
+Debug-NoLaunchShortcuts: true
 Debug-NoLaunches: true
 Element-Name: Acquire Release Test Launch
 Element-Type: context
 Element-Version: 2.0
 Id: _kDsOAB09EeiqQd73_u1uiA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/3/18 4:26 PM
+Save-Time: 3/6/18 5:11 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
