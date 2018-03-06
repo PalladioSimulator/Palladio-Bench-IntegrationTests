@@ -9,7 +9,7 @@ Element-Type: context
 Element-Version: 2.0
 Id: _JNFhsB1uEeiBgNkuthn_dw
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/2/18 6:03 PM
+Save-Time: 3/3/18 4:29 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
@@ -137,6 +137,6 @@ Content-Type: text/launch
 Entry-Name: debug.launches
 
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+<org.eclipse.rcptt.ctx.debug:Launch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.eclipse.rcptt.ctx.debug="http://eclipse.org/rcptt/ctx/debug" mode="run" configurationName="Reliability Test"/>
 
 ------=_debug.launches-be8ac185-ac72-3f40-ae87-94751ee91eea--

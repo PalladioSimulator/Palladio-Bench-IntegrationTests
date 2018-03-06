@@ -4,10 +4,10 @@ Contexts: _CBscUNmyEeeZ7Iz8YlUHQw,_pSmCINmtEeeZ7Iz8YlUHQw
 Element-Name: PALLADIO-203 Minimal Complete Non-Performance Model Test
 Element-Type: testcase
 Element-Version: 3.0
-External-Reference: 
+External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/PALLADIO-203
 Id: _drBXgNmsEeeZ7Iz8YlUHQw
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 2/6/18 11:01 AM
+Save-Time: 3/5/18 5:35 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
