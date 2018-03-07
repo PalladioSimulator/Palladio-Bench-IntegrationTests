@@ -6,7 +6,7 @@ Element-Type: context
 Element-Version: 2.0
 Id: _a96oACHtEeimJu50o8DwqQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/7/18 11:28 AM
+Save-Time: 3/7/18 2:39 PM
 
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
 Content-Type: text/ecl
@@ -21,9 +21,13 @@ get-view Experiments | get-tree | select "Local Memory.*"
 with [get-view Properties | get-tree] {
     select Id | activate-cell-edit -column 1
     with [get-editbox] {
-        set-text "_St7LMCFSEei5gIzvAktfWQ"
+        set-text "EDP2_DB"
         key-type Enter
     }
     apply-cell-edit
 }
+get-view Experiments | close
+get-view "Model Explorer" | click
+get-menu -path "Window/Show View/Other..." | click
+get-window "Show View" | get-button OK | click
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998--

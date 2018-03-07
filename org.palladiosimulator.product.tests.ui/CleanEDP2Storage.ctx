@@ -6,14 +6,14 @@ Element-Type: context
 Element-Version: 2.0
 Id: _lIgh0CHvEeimJu50o8DwqQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/7/18 11:13 AM
+Save-Time: 3/7/18 3:06 PM
 
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
 Content-Type: text/ecl
 Entry-Name: .ecl.context
 
 get-view Experiments | get-tree | get-items | foreach {
-	select-item
+	select-item 
 	get-view Experiments | get-button "Close Data Source" | click
 }        
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998--
