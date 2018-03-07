@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-98
 Id: _ETem8B75EeizwOOeaV1e7w
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/6/18 12:42 PM
+Save-Time: 3/7/18 10:31 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -53,18 +53,7 @@ with [get-editor "new Repository Diagram"] {
         mouse-press 68 83 button1 -height 514 -width 1039
         mouse-release 68 83 button1 524288 -height 514 -width 1039
     }
-    with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
-        mouse-hover 68 83 -height 514 -width 1039
-        mouse-move 82 83 -height 514 -width 1039
-        mouse-move 1034 127 -height 514 -width 1039
-    }
     with [get-palette] {
-        with [get-palette-entry CompositeComponent] {
-            mouse-move 26 16 -height 23 -width 188
-            mouse-hover 26 16 -height 23 -width 188
-            mouse-move 36 1 -height 23 -width 188
-        }
-        get-palette-entry BasicComponent | mouse-move 58 0 -height 23 -width 188
         with [get-palette-entry Interface] {
             mouse-move 52 12 -height 23 -width 188
             mouse-hover 52 12 -height 23 -width 188

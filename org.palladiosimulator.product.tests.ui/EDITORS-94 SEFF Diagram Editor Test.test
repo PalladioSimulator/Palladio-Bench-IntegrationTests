@@ -7,13 +7,14 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-94
 Id: _yhy4kB75EeizwOOeaV1e7w
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/6/18 5:25 PM
+Save-Time: 3/7/18 10:07 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
 Content-Type: text/plain
 Entry-Name: .description
 
+64-77???, 78-101???,
 Wiederverwendung des Diagram and Model von Repository Diagram Editor test (Editor-98) wird empfohlen, SEFF Diagram and Model;
 Repository Model Editor des Diagrams öffnen, Signatur "Sig2" zu "IP2" hinzufügen, neues Interface "IR1", Signatur "Sig3" zu "IR1" hinzufügen, RequiredRole die "BC1" und "IR1" verbindet,
 InfrastructureInterface "IR2" im Repository Diagram erstellen, Signatur "Sig4" zu "IR2" hinzufügen, InfrastructureRequiredRole die "BC1" und "IR2" verbindet,
@@ -53,14 +54,12 @@ with [get-view Properties] {
 }
 with [get-editor "new Repository Diagram"] {
     with [get-palette] {
-        get-palette-entry RequiredRole | mouse-move 86 6 -height 23 -width 305
         with [get-palette-entry Interface] {
             mouse-move 62 11 button1 -height 23 -width 305
             mouse-press 62 11 button1 -height 23 -width 305
             mouse-release 62 11 button1 524288 -height 23 -width 305
             mouse-move 82 21 -height 23 -width 305
         }
-        get-palette-entry BasicComponent | mouse-move 10 8 -height 23 -width 305
     }
     with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
         mouse-move 890 106 button1 -height 575 -width 985
@@ -139,8 +138,6 @@ with [get-editor "new Repository Diagram"] {
 with [get-view Properties] {
     get-button -index 4 | click
     with [get-table] {
-        select method1 -column Method | activate-cell-edit -column 1 -type MouseClickSelection
-        apply-cell-edit -deactivate
         select method1 -column Method | activate-cell-edit -column 2 -type MouseClickSelection
         with [get-editbox] {
             set-text sig3
@@ -157,11 +154,6 @@ with [get-editor "new Repository Diagram"] {
             mouse-release 54 9 button1 524288 -height 23 -width 305
             mouse-move 55 4 -height 23 -width 305
             mouse-hover 55 1 -height 23 -width 305
-        }
-        with [get-palette-entry ProvidedRole] {
-            mouse-move 36 1 -height 23 -width 305
-            mouse-hover 36 1 -height 23 -width 305
-            mouse-move 9 10 -height 23 -width 305
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
@@ -269,14 +261,6 @@ with [get-view Properties] {
 }
 with [get-editor "new Repository Diagram"] {
     with [get-palette] {
-        with [get-palette-entry InfrastructureProvidedRole] {
-            mouse-move 131 12 -height 23 -width 305
-            mouse-hover 131 12 -height 23 -width 305
-            mouse-move 131 12 button1 -height 23 -width 305
-            mouse-press 131 12 button1 -height 23 -width 305
-            mouse-release 131 12 button1 524288 -height 23 -width 305
-            mouse-move 132 0 -height 23 -width 305
-        }
         with [get-palette-entry InfrastructureRequiredRole] {
             mouse-move 130 12 button1 -height 23 -width 305
             mouse-press 130 12 button1 -height 23 -width 305

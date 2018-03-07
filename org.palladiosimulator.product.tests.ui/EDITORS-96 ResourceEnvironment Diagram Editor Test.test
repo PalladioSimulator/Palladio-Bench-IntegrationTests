@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-96
 Id: _kyuggB75EeizwOOeaV1e7w
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/6/18 12:42 PM
+Save-Time: 3/7/18 10:15 AM
 Testcase-Type: ecl
 Verifications: _9gk9MCBgEei8m5u-F-BskQ
 
@@ -404,22 +404,6 @@ with [get-editor "new ResourceEnvironment Diagram"] {
     }
     with [get-diagram -index 1 | get-edit-part -name "new ResourceEnvironment Diagram"] {
         mouse-move 849 171 -height 514 -width 934
-        with [get-edit-part -name "<<ResourceContainer>>\n"
-            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-            mouse-move 92 21 -height 98 -width 151
-            mouse-hover 92 21 -height 98 -width 151
-        }
-        mouse-move 543 127 -height 514 -width 934
-        with [get-edit-part -name "<<ResourceContainer>>\n"
-            + "RC1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-            mouse-move 386 44 -height 291 -width 441
-            mouse-hover 386 44 -height 291 -width 441
-        }
-        with [get-edit-part -name "<<ResourceContainer>>\n"
-            + "RC2" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-            mouse-move 41 13 -height 98 -width 151
-            mouse-hover 41 13 -height 98 -width 151
-        }
         mouse-move 749 223 -height 514 -width 934
         with [get-edit-part -name "<<LinkingResource>>\n"
             + "LinkingResource1"] {
