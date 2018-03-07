@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-97
 Id: _VZFdAB75EeizwOOeaV1e7w
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/6/18 12:42 PM
+Save-Time: 3/7/18 10:28 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -173,20 +173,6 @@ with [get-editor "new Repository Diagram"] {
         mouse-move 1037 154 -height 514 -width 1039
     }
     with [get-palette] {
-        with [get-palette-entry InfrastructureProvidedRole] {
-            mouse-move 73 6 -height 23 -width 188
-            mouse-hover 73 21 -height 23 -width 188
-            mouse-move 73 22 -height 23 -width 188
-        }
-        with [get-palette-entry InfrastructureInterface] {
-            mouse-move 72 8 -height 23 -width 188
-            mouse-hover 72 8 -height 23 -width 188
-        }
-        with [get-palette-entry InfrastructureRequiredRole] {
-            mouse-move 73 17 -height 23 -width 188
-            mouse-hover 73 17 -height 23 -width 188
-        }
-        get-palette-entry BasicComponent | mouse-move 63 0 -height 23 -width 188
         with [get-palette-entry Interface] {
             mouse-move 40 12 button1 -height 23 -width 188
             mouse-press 40 12 button1 -height 23 -width 188
@@ -271,11 +257,6 @@ with [get-editor "new Repository Diagram"] {
             mouse-release 63 11 button1 524288 -height 61 -width 196
             mouse-hover 63 11 -height 61 -width 196
         }
-        mouse-move 634 207 -height 514 -width 1039
-        mouse-move 396 159 -height 514 -width 1039
-        mouse-hover 396 159 -height 514 -width 1039
-        mouse-move 282 134 -height 514 -width 1039
-        mouse-move 14 73 -height 514 -width 1039
     }
 }
 get-button "Save (M1+S)" | click
@@ -337,10 +318,6 @@ with [get-editor "new Repository Diagram"] {
 with [get-editor "new Repository Diagram"] {
     get-diagram -index 1 | get-edit-part -name "new Repository Diagram" | mouse-move 1033 356 -height 531 -width 1039
     with [get-palette] {
-        with [get-palette-entry BasicComponent] {
-            mouse-move 81 22 -height 23 -width 188
-            mouse-hover 81 22 -height 23 -width 188
-        }
         with [get-palette-entry RequiredRole] {
             mouse-move 81 12 button1 -height 23 -width 188
             mouse-press 81 12 button1 -height 23 -width 188
@@ -368,8 +345,6 @@ with [get-editor "new Repository Diagram"] {
             mouse-release 76 5 button1 524288 -height 61 -width 196
             mouse-hover 76 5 -height 61 -width 196
         }
-        mouse-move 753 301 -height 531 -width 1039
-        mouse-move 1037 176 -height 531 -width 1039
     }
     with [get-palette | get-palette-entry RequiredRole] {
         mouse-move 63 3 -height 23 -width 188
@@ -442,10 +417,6 @@ with [get-editor "new Repository Diagram"] {
         mouse-move 1036 296 -height 530 -width 1039
     }
     with [get-palette] {
-        with [get-palette-entry InfrastructureRequiredRole] {
-            mouse-move 85 13 -height 23 -width 188
-            mouse-hover 85 13 -height 23 -width 188
-        }
         with [get-palette-entry CompositeComponent] {
             mouse-move 73 12 button1 -height 23 -width 188
             mouse-press 73 12 button1 -height 23 -width 188
@@ -522,8 +493,6 @@ with [get-editor "new Repository Diagram"] {
             mouse-release 93 9 button1 524288 -height 61 -width 196
             mouse-hover 93 9 -height 61 -width 196
         }
-        mouse-move 751 209 -height 560 -width 1039
-        mouse-move 1038 152 -height 560 -width 1039
     }
     with [get-palette] {
         with [get-palette-entry ProvidedRole] {
@@ -557,23 +526,8 @@ with [get-editor "new Repository Diagram"] {
                 mouse-hover 118 18 -height 26 -width 170
             }
         }
-        mouse-move 495 423 -height 560 -width 1039
-        mouse-hover 495 423 -height 560 -width 1039
-        mouse-move 488 426 -height 560 -width 1039
-        mouse-hover 488 426 -height 560 -width 1039
-        mouse-move 483 426 -height 560 -width 1039
-        mouse-hover 483 426 -height 560 -width 1039
-        mouse-move 482 426 -height 560 -width 1039
-        mouse-hover 482 426 -height 560 -width 1039
     }
     with [get-palette] {
-        with [get-palette-entry InfrastructureRequiredRole] {
-            mouse-move 75 7 -height 23 -width 188
-            mouse-hover 75 7 -height 23 -width 188
-            mouse-move 73 13 -height 23 -width 188
-            mouse-hover 73 13 -height 23 -width 188
-            mouse-move 76 22 -height 23 -width 188
-        }
         with [get-palette-entry InfrastructureProvidedRole] {
             mouse-move 76 2 -height 23 -width 188
             mouse-hover 76 2 -height 23 -width 188
@@ -705,10 +659,6 @@ with [get-editor "new Assembly Diagram"] {
         mouse-move 1038 282 -height 514 -width 1039
     }
     with [get-palette] {
-        with [get-palette-entry ProvidedDelegationConnector] {
-            mouse-move 82 20 -height 23 -width 188
-            mouse-hover 82 20 -height 23 -width 188
-        }
         with [get-palette-entry RequiredDelegationConnector] {
             mouse-move 82 16 button1 -height 23 -width 188
             mouse-press 82 16 button1 -height 23 -width 188
@@ -990,14 +940,6 @@ with [get-editor "new Assembly Diagram"] {
                 -width 148
             get-edit-part -name InfrastructureProvidedRole1 | get-edit-part -className ParentBasedRotatingImageEditPart 
                 | mouse-hover 11 9 -height 30 -width 30
-        }
-    }
-    with [get-palette] {
-        with [get-palette-entry SystemOperationRequiredRole] {
-            mouse-move 48 14 -height 23 -width 188
-            mouse-hover 48 14 -height 23 -width 188
-            mouse-move 50 9 -height 23 -width 188
-            mouse-hover 50 9 -height 23 -width 188
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "new Assembly Diagram"] {
