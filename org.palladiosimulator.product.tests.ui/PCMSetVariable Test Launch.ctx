@@ -4,12 +4,12 @@ Context-Type: org.eclipse.rcptt.ctx.debug
 Debug-NoBreakpoints: true
 Debug-NoLaunchShortcuts: true
 Debug-NoLaunches: true
-Element-Name: PCMSetVariable Launch
+Element-Name: PCMSetVariable Test Launch
 Element-Type: context
 Element-Version: 2.0
 Id: _Ycz_8NktEeeXl_p6TSmJmg
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/7/18 3:26 PM
+Save-Time: 3/13/18 4:26 PM
 
 ------=_debug.launchtypes-7159add4-14d7-36f5-abc2-a36dec1fc18e
 Content-Type: q7/binary
