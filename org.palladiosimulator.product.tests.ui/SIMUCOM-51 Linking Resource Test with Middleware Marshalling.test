@@ -1,13 +1,13 @@
 --- RCPTT testcase ---
 Format-Version: 1.0
-Contexts: _7lze8BZiEei3e74MF3gNbQ,_2jg7UNkNEeeBVcEmtPHXxw,_uPPjMCbZEeijtqTfgZ4QdA,_HLaB4AtnEeipvdTWhxg1oA,_lIgh0CHvEeimJu50o8DwqQ,_a96oACHtEeimJu50o8DwqQ,_SYxXoB4-EeigGLEEJX-RBA
+Contexts: _7lze8BZiEei3e74MF3gNbQ,_2jg7UNkNEeeBVcEmtPHXxw,_2XqRYCfBEeinVqA1Eq-UbA,_zTBEQCbHEeijtqTfgZ4QdA,_HLaB4AtnEeipvdTWhxg1oA,_lIgh0CHvEeimJu50o8DwqQ,_a96oACHtEeimJu50o8DwqQ,_SYxXoB4-EeigGLEEJX-RBA
 Element-Name: SIMUCOM-51 Linking Resource Test with Middleware Marshalling
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/SIMUCOM-51
 Id: _tAO10Bx6Eei5XJvfSE2NEQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/13/18 5:17 PM
+Save-Time: 3/14/18 9:38 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -58,4 +58,7 @@ with [get-window "Rename Resource"] {
 }
 
 assert-tables-match [read-csv-file "workspace:/LinkingResourceTest/Linking_Resource_MM_aName_Resource_Demand_Tuple.csv" | select-columns "Resource Demand[s]"] [read-csv-file "workspace:/LinkingResourceTest/Linking_Resource_MM_aName_Resource_Demand_Tuple_Reference.csv" | select-columns "Resource Demand[s]"]
+
+delete-file "workspace:/LinkingResourceTest/Linking_Resource_MM_aName_Resource_Demand_Tuple.csv"
+delete-file "workspace:/LinkingResourceTest/Linking_Resource_MM_aName_Resource_Demand_Tuple_Reference.csv"
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

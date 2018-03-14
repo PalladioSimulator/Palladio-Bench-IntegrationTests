@@ -1,0 +1,18 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.parameters
+Element-Name: Infrastructure Component Test Project Name Parameter
+Element-Type: context
+Element-Version: 2.0
+Id: _V9L1ACe_EeinVqA1Eq-UbA
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 3/14/18 8:44 PM
+
+------=_.parameters.context-2e023de5-3294-36a9-ac1d-6701f05a40ee
+Content-Type: text/properties
+Entry-Name: .parameters.context
+
+#Wed Mar 14 20:44:29 CET 2018
+projectName=InfrastructureComponent_Example
+
+------=_.parameters.context-2e023de5-3294-36a9-ac1d-6701f05a40ee--
