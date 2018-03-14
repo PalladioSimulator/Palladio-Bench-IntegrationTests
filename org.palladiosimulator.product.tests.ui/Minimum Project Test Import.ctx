@@ -6,14 +6,14 @@ Element-Type: context
 Element-Version: 2.0
 Id: _zTBEQCbHEeijtqTfgZ4QdA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/14/18 11:26 AM
+Save-Time: 3/14/18 4:03 PM
 
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
 Content-Type: text/ecl
 Entry-Name: .ecl.context
 
 // calculate an absolute path
-global [val projectLocation [concat [get-java-property "examplesDir"] "/Minimum_Project_Example"]]
+global [val projectLocation [concat [get-java-property "examplesDir" | str | invoke replace "\"" ""] "/Minimum_Project_Example"]]
 
 // import a project
 get-menu -path "File/Import..." | click
