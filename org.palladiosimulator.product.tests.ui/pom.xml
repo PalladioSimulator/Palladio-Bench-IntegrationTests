@@ -30,6 +30,7 @@
   </pluginRepositories>
 
   <properties>
+	<examples.dir>${project.build.directory}/examples</examples.dir>
     <rcptt-maven-version>2.2.0</rcptt-maven-version>
   </properties>
 
@@ -52,8 +53,7 @@
         <configuration> 
     		<username>anonymous</username> 
     		<password>anonymous</password>
-    		<basedir>${project.basedir}</basedir>
-    		<exportDirectory>target/examples</exportDirectory> 
+    		<exportDirectory>${examples.dir}</exportDirectory>
     		<connectionType>connection</connectionType> 
     		<connectionUrl>scm:svn:https://svnserver.informatik.kit.edu/i43/svn/code/Palladio/Examples/</connectionUrl>
   		</configuration> 
@@ -90,12 +90,11 @@
             </args>
             -->
            <!-- optional VM args can be set too -->
-           <!--
+
 		   <vmArgs>
-			 <vmArg>-Xmx768m</vmArg>
-			 <vmArg>-XX:MaxPermSize=256m</vmArg>
+			 <vmArg>-DexamplesDir="${examples.dir}"</vmArg>
 		   </vmArgs>
-           -->
+
           </aut>
 
           <runner>
