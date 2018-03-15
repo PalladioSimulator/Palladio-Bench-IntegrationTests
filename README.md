@@ -17,10 +17,15 @@ Recommended VM Arguments:
 -DexamplesDir=USER.HOME\git\Palladio-Build-IntegrationTests\org.palladiosimulator.product.tests.ui\target/examples (folder containing example projects to test)
 
 Structure of a Testcase:
+- Name incl. Tags: should be the same as on issue tracker system or requirements management tool 
+- Description incl. Reference Site: list of test steps, comments and link to issue tracker system 
+- Contexts: Workspace, Workbench, Folder, Parameter, Launch Config, Script Snippet
+- Properties: (not used)
+- Script: main ECL script of the test
+- Verifications: (not used)
 
 Create a new Testcase:
-Reihenfolge der Schaltflächen  
-Kontexten sollten alle üblicherweise notwendigen Kontexte und deren Reihenfolge, inkl EDP2 Kontext
+- Order of Steps and Contextes (EDP2)
 
 Extend a Testcase:
 
