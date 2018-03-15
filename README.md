@@ -8,7 +8,6 @@ Preparation:
 - Download Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 
 - To Add an Application-under-Test(AuT), go to "Applications" View in RCPTT Suite and click "New..." Button on View Toolbar. In the opening Dialog, browse for an AuT location on a disk. AuT name is automatically set to AuT's product-id. Click Finish and double click on the AuT to launch it. 
-
 For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/getstarted/#add-an-application-under-test
 
 - To Configure your AuT click on a created AuT in the list, and click on "Configure..." on View Toolbar. Here you can change the automatically selected name or change the launch config for the AuT by click on "Advancded".
@@ -16,6 +15,17 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
 Recommended VM Arguments:
 -Dosgi.requiredJavaVersion=1.7 -Xms512m -Xmx2048m -XX:MaxPermSize=128m
 -DexamplesDir=USER.HOME\git\Palladio-Build-IntegrationTests\org.palladiosimulator.product.tests.ui\target/examples (folder containing example projects to test)
+
+Structure of a Testcase:
+
+Create a new Testcase:
+Reihenfolge der Schaltflächen  
+Kontexten sollten alle üblicherweise notwendigen Kontexte und deren Reihenfolge, inkl EDP2 Kontext
+
+Extend a Testcase:
+
+Maintain a Testcase:
+
 
 Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 
@@ -48,7 +58,7 @@ Running Maven Script:
 
 
 Tips to make the Tests more robust: 
-- Use contexts instead of writing it in the script
+- Use contexts feature instead of writing a script doing this
 - Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
 - Select the options "clear workspace context" and "clear launch configs", if it does not affect the test
 - Where possible avoid selections, especially the ".*" star selections
