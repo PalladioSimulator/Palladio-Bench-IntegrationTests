@@ -7,8 +7,7 @@ Preparation:
 - RCPTT Documentation at https://www.eclipse.org/rcptt/documentation/userguide/getstarted/
 - Download Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 
-- To Add an Application-under-Test(AuT), go to "Applications" View in RCPTT Suite and click "New..." Button on View Toolbar. In the opening Dialog, browse for an AuT location on a disk. AuT name is automatically set to AuT's product-id. Click Finish and double click on the AuT to launch it. 
-
+- To Add an Application-under-Test(AuT), go to "Applications" View in RCPTT Suite and click "New..." Button on View Toolbar. In the opening Dialog, browse for an AuT location on a disk. AuT name is automatically set to AuT's product-id. Click Finish and double click on AuT to launch it. 
 For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/getstarted/#add-an-application-under-test
 
 - To Configure your AuT click on a created AuT in the list, and click on "Configure..." on View Toolbar. Here you can change the automatically selected name or change the launch config for the AuT by click on "Advancded". 
