@@ -5,13 +5,16 @@ Preparation:
 
 - Download RCPTT from https://www.eclipse.org/rcptt/download/
 - RCPTT Documentation at https://www.eclipse.org/rcptt/documentation/userguide/getstarted/
-- Create new GIT-Project e.g. https://github.com/PalladioSimulator/Palladio-Build-IntegrationTests
-- Create new RCPTT Project
-- Share Project in GIT (right click on Project > Team > Share Project...) and Initial Commit 
-(right click on Project > Team > Commit)
-- Downloading Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
-- Create new AUT in RCPTT with Palladio Bench 
+- Download Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 
+- To Add an Application-under-Test(AuT), go to "Applications" View in RCPTT Suite and click "New..." Button on View Toolbar. In the opening Dialog, browse for an AuT location on a disk. AuT name is automatically set to AuT's product-id. Click Finish and double click on the AuT to launch it. 
+For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/getstarted/#add-an-application-under-test
+
+- To Configure your AuT click on a created AuT in the list, and click on "Configure..." on View Toolbar. Here you can change the automatically selected name or change the launch config for the AuT by click on "Advancded".
+
+Recommended VM Arguments:
+-Dosgi.requiredJavaVersion=1.7 -Xms512m -Xmx2048m -XX:MaxPermSize=128m
+-DexamplesDir=USER.HOME\git\Palladio-Build-IntegrationTests\org.palladiosimulator.product.tests.ui\target/examples (folder containing example projects to test)
 
 Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 
@@ -20,6 +23,7 @@ Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 - SCM for SVN-Import: http://maven.apache.org/scm/subversion.html
 - SCM for GIT-Import: http://maven.apache.org/scm/git.html
 - SCM Plugin - Lists of goal commands : https://maven.apache.org/scm/maven-scm-plugin/index.html
+- In this example the goal "export" was chosen
 - Example for pom.xml under https://raw.githubusercontent.com/PalladioSimulator/Palladio-Build-IntegrationTests/master/org.palladiosimulator.product.tests.ui/pom.xml
 
 
