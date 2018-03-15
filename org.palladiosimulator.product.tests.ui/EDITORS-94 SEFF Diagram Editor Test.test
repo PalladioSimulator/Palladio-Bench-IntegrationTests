@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-94
 Id: _yhy4kB75EeizwOOeaV1e7w
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/16/18 12:06 AM
+Save-Time: 3/16/18 12:21 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -690,82 +690,104 @@ with [get-window "Select Object..."] {
         | select "New Repository.*/IR1.*/sig3.*"
     get-button OK | click
 }
+
 with [get-editor "Seff Diagram"] {
-    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 1097 490 -height 514 -width 1102
     with [get-palette] {
+        with [get-palette-entry ExternalCallAction] {
+            mouse-move 121 5 -height 23 -width 132
+            mouse-move 61 9 -height 23 -width 132
+        }
         with [get-palette-entry BranchAction] {
-            mouse-move 54 14 button1 -height 23 -width 128
-            mouse-press 54 14 button1 -height 23 -width 128
-            mouse-release 54 14 button1 524288 -height 23 -width 128
+            mouse-move 55 14 button1 -height 23 -width 132
+            mouse-press 55 14 button1 -height 23 -width 132
+            mouse-release 55 14 button1 524288 -height 23 -width 132
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
-        mouse-move 663 274 -height 514 -width 1102
-        get-edit-part -name "<<Loop>>\n"
-            + "LoopAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
-            | get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
-            | mouse-move 274 88 -height 228 -width 324
-        get-edit-part -name "<<InternalAction>> \n"
-            + "InternalAction1" | mouse-move 215 149 -height 202 -width 218
-        mouse-move 284 405 button1 -height 514 -width 1102
-        mouse-press 284 405 button1 -height 514 -width 1102
-        mouse-release 284 405 button1 524288 -height 514 -width 1102
+        mouse-move 664 181 -height 428 -width 866
+        mouse-move 515 107 button1 -height 428 -width 866
+        mouse-press 515 107 button1 -height 428 -width 866
+        mouse-release 515 107 button1 524288 -height 428 -width 866
+    }
+    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 865 280 -height 428 -width 866
+    with [get-palette] {
+        with [get-palette-entry "Variable Characterisation"] {
+            mouse-move 39 21 -height 23 -width 166
+            mouse-move 37 1 -height 23 -width 166
+        }
+    }
+    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 861 80 -height 428 -width 866
+    with [get-palette] {
+        with [get-palette-entry "Action Details"] {
+            mouse-move 58 126 button1 -height 127 -width 125
+            mouse-press 58 126 button1 -height 127 -width 125
+            mouse-release 58 126 button1 524288 -height 127 -width 125
+            mouse-press 58 126 button1 -height 127 -width 125
+            mouse-release 58 126 button1 524288 -height 127 -width 125
+        }
+        with [get-palette-entry "Guarded Branch Transition"] {
+            mouse-move 58 6 button1 -height 37 -width 166
+            mouse-press 58 6 button1 -height 37 -width 166
+            mouse-release 58 6 button1 524288 -height 37 -width 166
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
+        mouse-move 663 249 -height 428 -width 866
+        with [get-edit-part -name "<<Loop>>\n"
+            + "LoopAction1"] {
+            mouse-move 327 128 -height 308 -width 328
+            get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name "" 
+                | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 276 3 
+                -height 228 -width 324
+        }
+        with [get-edit-part -name "<<Branch>>\n"
+            + "BranchAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 27 40 button1 -height 68 -width 198
+            mouse-press 27 40 button1 -height 68 -width 198
+            mouse-release 27 40 button1 524288 -height 68 -width 198
+        }
     }
     with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
         get-edit-part -name "<<Branch>>\n"
             + "BranchAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
-            | mouse-move 194 8 -height 68 -width 198
-        mouse-move 1098 444 -height 514 -width 1102
-    }
-    with [get-palette | get-palette-entry "Guarded Branch Transition"] {
-        mouse-move 47 12 button1 -height 37 -width 166
-        mouse-press 47 12 button1 -height 37 -width 166
-        mouse-release 47 12 button1 524288 -height 37 -width 166
-    }
-    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram" | get-edit-part -name "<<Branch>>\n"
-        + "BranchAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-        mouse-move 78 36 button1 -height 68 -width 198
-        mouse-press 78 36 button1 -height 68 -width 198
-        mouse-release 78 36 button1 524288 -height 68 -width 198
-    }
-    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
-        get-edit-part -name "<<Branch>>\n"
-            + "BranchAction1" | mouse-move 199 6 -height 174 -width 200
-        mouse-move 1100 391 -height 580 -width 1102
+            | get-edit-part -name "<<GuardedBranchTransition>>\n"
+            + "GuardedBranchTransition1" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | mouse-move 77 0 -height 92 -width 182
+        mouse-move 865 276 -height 428 -width 866
     }
     with [get-palette | get-palette-entry "Probabilistic Branch Transition"] {
-        mouse-move 48 18 button1 -height 37 -width 166
-        mouse-press 48 18 button1 -height 37 -width 166
-        mouse-release 48 18 button1 524288 -height 37 -width 166
+        mouse-move 47 17 button1 -height 37 -width 166
+        mouse-press 47 17 button1 -height 37 -width 166
+        mouse-release 47 17 button1 524288 -height 37 -width 166
     }
     with [get-diagram -index 1 | get-edit-part -name "Seff Diagram" | get-edit-part -name "<<Branch>>\n"
         + "BranchAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-        mouse-move 145 30 -height 172 -width 198
-        get-edit-part -name "<<GuardedBranchTransition>>\n"
-            + "GuardedBranchTransition1" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
-            | mouse-move 31 0 -height 92 -width 182
-        mouse-move 35 45 button1 -height 172 -width 198
-        mouse-press 35 45 button1 -height 172 -width 198
-        mouse-release 35 45 button1 524288 -height 172 -width 198
+        mouse-move 196 152 -height 177 -width 198
+        mouse-move 14 62 button1 -height 177 -width 198
+        mouse-press 14 62 button1 -height 177 -width 198
+        mouse-release 14 62 button1 524288 -height 177 -width 198
     }
-    with [get-diagram -index 1] {
-        with [get-edit-part -name "Seff Diagram" | get-edit-part -name "<<Branch>>\n"
-            + "BranchAction1"] {
-            with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
-                -name "<<ProbabilisticBranchTransition>>\n"
-                + "ProbabilisticBranchTransition1"] {
-                mouse-move 13 4 -height 141 -width 204
-                with [get-edit-part -className DNodeContainerName2EditPart] {
-                    mouse-move 48 10 button1 -height 26 -width 200
-                    mouse-press 48 10 button1 -height 26 -width 200
-                    mouse-release 48 10 button1 524288 -height 26 -width 200
+    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
+        with [get-edit-part -name "<<Branch>>\n"
+            + "BranchAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            with [get-edit-part -name "<<ProbabilisticBranchTransition>>\n"
+                + "ProbabilisticBranchTransition1" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 56 0 -height 102 -width 200
+                with [get-edit-part -name "0.0" | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                    mouse-move 104 13 button1 -height 50 -width 200
+                    mouse-press 104 13 button1 -height 50 -width 200
+                    mouse-release 104 13 button1 524288 -height 50 -width 200
+                    mouse-move 66 47 -height 50 -width 200
                 }
-                activate-direct-edit
-                get-edit-part -className DNodeContainerName2EditPart | activate-direct-edit
             }
-            mouse-move 182 183 -height 184 -width 200
+            mouse-move 43 206 -height 207 -width 198
         }
-        commit-direct-edit
+        get-edit-part -name "<<Loop>>\n"
+            + "LoopAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+            | get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | mouse-move 194 205 -height 228 -width 324
     }
 }
 with [get-view Properties | get-tree] {
@@ -778,86 +800,97 @@ with [get-view Properties | get-tree] {
     apply-cell-edit -deactivate
 }
 with [get-editor "Seff Diagram"] {
+    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 865 246 -height 428 -width 866
     with [get-palette] {
+        get-palette-entry RecoveryAction | mouse-move 23 0 -height 23 -width 132
         with [get-palette-entry ForkAction] {
-            mouse-move 54 14 button1 -height 23 -width 128
-            mouse-press 54 14 button1 -height 23 -width 128
-            mouse-release 54 14 button1 524288 -height 23 -width 128
+            mouse-move 44 7 button1 -height 23 -width 132
+            mouse-press 44 7 button1 -height 23 -width 132
+            mouse-release 44 7 button1 524288 -height 23 -width 132
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
-        mouse-move 663 258 -height 599 -width 1102
-        get-edit-part -name "<<Loop>>\n"
-            + "LoopAction1" | mouse-move 326 138 -height 308 -width 328
-        mouse-move 675 263 button1 -height 599 -width 1102
-        mouse-press 675 263 button1 -height 599 -width 1102
-        mouse-release 675 263 button1 524288 -height 599 -width 1102
+        mouse-move 678 347 button1 -height 515 -width 1001
+        mouse-press 678 347 button1 -height 515 -width 1001
+        mouse-release 678 347 button1 524288 -height 515 -width 1001
     }
-    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 1101 380 -height 599 -width 1102
+    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 865 289 -height 428 -width 866
     with [get-palette] {
+        with [get-palette-entry "Action Details"] {
+            mouse-move 65 22 button1 -height 127 -width 125
+            mouse-press 65 22 button1 -height 127 -width 125
+            mouse-release 65 22 button1 524288 -height 127 -width 125
+        }
         with [get-palette-entry "Resource Demanding Behaviour"] {
-            mouse-move 43 18 button1 -height 37 -width 166
-            mouse-press 43 18 button1 -height 37 -width 166
-            mouse-release 43 18 button1 524288 -height 37 -width 166
+            mouse-move 60 10 button1 -height 37 -width 166
+            mouse-press 60 10 button1 -height 37 -width 166
+            mouse-release 60 10 button1 524288 -height 37 -width 166
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "Seff Diagram" | get-edit-part -name "<<ForkAction>>\n"
         + "ForkAction1"] {
-        mouse-move 89 50 -height 51 -width 111
-        mouse-move 47 32 -height 51 -width 111
+        mouse-move 83 4 -height 51 -width 111
         with [get-edit-part -className DNodeContainerNameEditPart] {
-            mouse-move 27 20 button1 -height 26 -width 107
-            mouse-press 27 20 button1 -height 26 -width 107
-            mouse-release 27 20 button1 524288 -height 26 -width 107
+            mouse-move 23 10 button1 -height 26 -width 107
+            mouse-press 23 10 button1 -height 26 -width 107
+            mouse-release 23 10 button1 524288 -height 26 -width 107
         }
     }
-    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
-        get-edit-part -name "<<ForkAction>>\n"
-            + "ForkAction1" | mouse-move 50 32 -height 90 -width 111
-        mouse-move 1100 267 -height 599 -width 1102
+    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 863 226 -height 467 -width 866
+    with [get-palette | get-palette-entry RecoveryAction] {
+        mouse-move 63 11 button1 -height 23 -width 132
+        mouse-press 63 11 button1 -height 23 -width 132
+        mouse-release 63 11 button1 524288 -height 23 -width 132
     }
+    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram" | get-edit-part -name "<<ForkAction>>\n"
+        + "ForkAction1"] {
+        mouse-move 45 35 -height 90 -width 111
+        with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name "" 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 36 9 button1 -height 50 -width 107
+            mouse-press 36 9 button1 -height 50 -width 107
+            mouse-release 36 9 button1 524288 -height 50 -width 107
+        }
+    }
+    get-diagram -index 1 | get-edit-part -name "Seff Diagram" | get-edit-part -name "<<ForkAction>>\n"
+        + "ForkAction1" | mouse-move 185 4 -height 130 -width 193
     with [get-palette] {
-        with [get-palette-entry RecoveryAction] {
-            mouse-move 80 15 button1 -height 23 -width 128
-            mouse-press 80 15 button1 -height 23 -width 128
-            mouse-release 80 15 button1 524288 -height 23 -width 128
+        with [get-palette-entry "Action Details"] {
+            mouse-move 65 124 button1 -height 127 -width 125
+            mouse-press 65 124 button1 -height 127 -width 125
+            mouse-release 65 124 button1 524288 -height 127 -width 125
+            mouse-press 65 124 button1 -height 127 -width 125
+            mouse-release 65 124 button1 524288 -height 127 -width 125
+        }
+        with [get-palette-entry "Recovery Action Behaviour"] {
+            mouse-move 65 16 button1 -height 37 -width 166
+            mouse-press 65 16 button1 -height 37 -width 166
+            mouse-release 65 16 button1 524288 -height 37 -width 166
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "Seff Diagram" | get-edit-part -name "<<ForkAction>>\n"
         + "ForkAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
         -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
-        mouse-move 23 21 button1 -height 50 -width 107
-        mouse-press 23 21 button1 -height 50 -width 107
-        mouse-release 23 21 button1 524288 -height 50 -width 107
-    }
-    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
-        get-edit-part -name "<<ForkAction>>\n"
-            + "ForkAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
-            | get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
-            | mouse-move 38 23 -height 100 -width 179
-        mouse-move 1096 338 -height 599 -width 1102
-    }
-    with [get-palette] {
-        with [get-palette-entry "Recovery Action Behaviour"] {
-            mouse-move 69 1 button1 -height 37 -width 166
-            mouse-press 69 1 button1 -height 37 -width 166
-            mouse-release 69 1 button1 524288 -height 37 -width 166
+        mouse-move 87 4 -height 90 -width 189
+        with [get-edit-part -name "<<RecoveryAction>>\n"
+            + "RecoveryAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 32 7 button1 -height 68 -width 148
+            mouse-press 32 7 button1 -height 68 -width 148
+            mouse-release 32 7 button1 524288 -height 68 -width 148
         }
     }
-    with [get-diagram -index 1 | get-edit-part -name "Seff Diagram" | get-edit-part -name "<<ForkAction>>\n"
-        + "ForkAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part 
-        -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
-        -name "<<RecoveryAction>>\n"
-        + "RecoveryAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
-        mouse-move 35 44 button1 -height 68 -width 148
-        mouse-press 35 44 button1 -height 68 -width 148
-        mouse-release 35 44 button1 524288 -height 68 -width 148
-    }
     with [get-diagram -index 1 | get-edit-part -name "Seff Diagram"] {
-        mouse-move 671 343 -height 599 -width 1102
-        get-edit-part -name "<<InternalAction>> \n"
-            + "InternalAction1" | mouse-move 217 65 -height 202 -width 218
-        mouse-move 50 95 -height 599 -width 1102
+        mouse-move 716 277 -height 475 -width 931
+        with [get-edit-part -name "<<Branch>>\n"
+            + "BranchAction1" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 196 169 -height 207 -width 198
+            get-edit-part -name "<<ProbabilisticBranchTransition>>\n"
+                + "ProbabilisticBranchTransition1" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 164 2 -height 51 -width 200
+            mouse-move 2 64 -height 207 -width 198
+        }
+        mouse-move 327 81 -height 475 -width 931
     }
 }
 get-button "Save All (M1+M2+S)" | click
