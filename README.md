@@ -17,12 +17,12 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
 
 
 ## Structure of a Testcase:
-- Name incl. Tags: should be the same as on issue tracker system or requirements management tool 
-- Description incl. Reference Site: list of test steps, comments and link to issue tracker system 
-- Contexts: mainly used Workspace, Workbench, Folder, Parameter, Launch Config and Script Snippets
-- Properties: (not used)
-- Script: main ECL script of the test
-- Verifications: (not used)
+- ***Name, Tags***: should be the same as on issue tracker system or requirements management tool 
+- ***Description, Reference Site***: list of test steps, comments and link to issue tracker system 
+- ***Contexts***: mainly used Workspace, Workbench, Folder, Parameter, Launch Config and Script Snippets
+- ***Properties***: (not used)
+- ***Script***: main ECL script of the test
+- ***Verifications***: (not used)
 
 
 ## Create a new Testcase:
@@ -37,25 +37,25 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
   - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run  configuration. Record launches additionally to defining launch configs by pressing "Capture" button during a running launch in AUT
 - Write a script or record it through the "Record" function (where possible, record and copy smaller sections with the snippet function), if possible leave AUT open, restart if necessary, or delete completely and add again
 - List of predefined commands at https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html
-- To analyse your script and run it step by step use DEBUG perspective
+- To analyse your script and run it step by step, use DEBUG perspective
 
 ## Extend a Testcase:
 - Add new context in context section. Whereever possible, re-record contexts instead of extending existing ones.
-- Expand Script Code
-- Before running in maven, let it run locally with the "replay" function
-- Launch pom.xml with maven "verify" goal
+- Expand Script Code.
+- Before running in maven, let it run locally with the "replay" function.
+- Launch pom.xml with maven goal "verify".
 
 ## Maintain a Testcase:
-- Always make sure that no simulation results from an earlier test run are in project directory
-- Use contexts feature instead of writing a script doing this
-- Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
-- Select the options "clear workspace context" and "clear launch configs", if it does not affect the test
-- Where possible avoid selections, especially the star selections
-- Make a refresh or key-type f5 before every action in project explorer
-- Use the simple copy paste commands for copying files, not those in the menu
-- Also check test cases in maven script very often
-- In graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window
-- Delete all "get-palette-entry" commands in sirius editor test scripts that were not really selected during the test (mouse only hovered/moved, not pressed)
+- Always make sure that no simulation results from an earlier test run are in project directory.
+- Use contexts feature instead of writing a script doing this.
+- Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...).
+- Select the options "clear workspace context" and "clear launch configs", if it does not affect the test.
+- Where possible avoid selections, especially the star selections.
+- Make a refresh or key-type f5 before every action in project explorer.
+- Use the simple copy paste commands for copying files, not those in the menu.
+- Also check test cases in maven script very often.
+- In graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window.
+- Delete all "get-palette-entry" commands in sirius editor test scripts that were not really selected during the test (mouse only hovered/moved, not pressed).
 
 
 ## Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
@@ -64,14 +64,14 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
 - SCM for SVN-Import: http://maven.apache.org/scm/subversion.html
 - SCM for GIT-Import: http://maven.apache.org/scm/git.html
 - SCM Plugin - Lists of goal commands : https://maven.apache.org/scm/maven-scm-plugin/index.html
-- In this example the goal "export" was chosen
+- In this example, the goal "export" was chosen.
 - Example for pom.xml under https://raw.githubusercontent.com/PalladioSimulator/Palladio-Build-IntegrationTests/master/org.palladiosimulator.product.tests.ui/pom.xml
 
 
 ## Running Maven Script:
 - Install "m2e - Maven integration for Eclipse" under Help > install new software
 - Right click on pom.xml > Run as > Run Configurations > Create new Maven Build Configuration with goal "verify" (check Screenshots for details about errors) > Run
-- Check console for the results
+- Check console for the results.
 
 
 
