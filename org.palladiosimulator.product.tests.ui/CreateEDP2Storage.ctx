@@ -6,12 +6,14 @@ Element-Type: context
 Element-Version: 2.0
 Id: _a96oACHtEeimJu50o8DwqQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/7/18 5:02 PM
+Save-Time: 3/16/18 11:33 AM
 
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
 Content-Type: text/ecl
 Entry-Name: .ecl.context
 
+// In the EDP2 perspective there is an experiment view where all edp2 databases are listed.
+// This code section creates a new database and set its name to "EDP2_DB".
 get-view Experiments | get-button "Add Data Source" | click
 with [get-window "Open EDP2 Data Source"] {
     get-combo -after [get-label "Type of data source:"] | select "In-Memory data source"

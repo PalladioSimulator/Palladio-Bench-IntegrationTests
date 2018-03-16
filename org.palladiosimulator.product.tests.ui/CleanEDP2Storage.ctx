@@ -6,12 +6,14 @@ Element-Type: context
 Element-Version: 2.0
 Id: _lIgh0CHvEeimJu50o8DwqQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/9/18 3:11 PM
+Save-Time: 3/16/18 11:32 AM
 
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
 Content-Type: text/ecl
 Entry-Name: .ecl.context
 
+// In the EDP2 perspective there is an experiment view where all edp2 databases are listed. 
+// This code section closes all existing databases and thereby deletes them.
 loop {
     if [ get-view Experiments | get-tree | get-property itemCount -raw | int | gt 0] {
     	with [get-view Experiments | get-tree | get-item ".*"] {
