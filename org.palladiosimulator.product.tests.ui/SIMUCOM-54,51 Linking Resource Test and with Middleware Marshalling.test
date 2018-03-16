@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/SIMUCOM-54 https://sdqbuild.ipd.kit.edu/jira/browse/SIMUCOM-51
 Id: _NC_1kNkNEeeBVcEmtPHXxw
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/15/18 10:18 PM
+Save-Time: 3/16/18 12:47 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -35,6 +35,8 @@ The simulation output should say at some point (if verbose output is log level d
 Content-Type: text/ecl
 Entry-Name: .content
 
+// In the EDP2 perspective there is an experiment view where all edp2 databases are listed.
+// The simulation results will be exported to CSV files in an additional temporaryProject so that they can be further processed.
 with [get-view Experiments] {
     click
     get-tree | select "Local Memory.*"
@@ -48,7 +50,7 @@ with [get-window "Select Batch Export Target Folder"] {
     }
     get-button Finish | click
 }
-
+// The simulation result file of the "LR Test"  will be moved to project directory
 with [get-view "Project Explorer" | get-tree] {
     select "temporaryProject" | get-menu -path Refresh | click
     select "temporaryProject/LinkingResourceTest__.*/Default_Variation_.*/.*/Linking_Resource_aName_Resource_Demand_Tuple.csv"
@@ -58,7 +60,7 @@ with [get-window "Move Resources"] {
     get-tree | select temporaryProject
     get-button OK | click
 }
-
+// The simulation result file of the "LR Test with Middleware Marshalling" has the same name and needs to be renamed before moving
 with [get-view "Project Explorer" | get-tree] { 
 	select "temporaryProject" | get-menu -path Refresh | click
     select "temporaryProject/LinkingResourceTest_with_Middleware_Marshalling__.*/Default_Variation_.*/.*/Linking_Resource_aName_Resource_Demand_Tuple.csv"
@@ -68,7 +70,7 @@ with [get-view "Project Explorer" | get-tree] {
     	get-button OK | click
 	}
 }
-
+// The simulation result file of the "LR Test with Middleware Marshalling"  will be moved to project directory
 with [get-view "Project Explorer" | get-tree] {
     select "temporaryProject" | get-menu -path Refresh | click
     select "temporaryProject/LinkingResourceTest_with_Middleware_Marshalling__.*/Default_Variation_.*/.*/Linking_Resource_MM_aName_Resource_Demand_Tuple.csv"
@@ -78,7 +80,7 @@ with [get-window "Move Resources"] {
     get-tree | select temporaryProject
     get-button OK | click
 }
-
+// The simulation result files are compared with reference files that were previously imported via the workspace context "LinkingResourceTest Folder".
 assert-tables-match [read-csv-file "workspace:/temporaryProject/Linking_Resource_aName_Resource_Demand_Tuple.csv" | select-columns "Resource Demand[s]"] [read-csv-file "workspace:/temporaryProject/Linking_Resource_aName_Resource_Demand_Tuple_Reference.csv" | select-columns "Resource Demand[s]"]
 assert-tables-match [read-csv-file "workspace:/temporaryProject/Linking_Resource_MM_aName_Resource_Demand_Tuple.csv" | select-columns "Resource Demand[s]"] [read-csv-file "workspace:/temporaryProject/Linking_Resource_MM_aName_Resource_Demand_Tuple_Reference.csv" | select-columns "Resource Demand[s]"]
 
