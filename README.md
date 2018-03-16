@@ -12,8 +12,8 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
 
 - To Configure your AuT click on a created AuT in the list, and click on "Configure..." on View Toolbar. Here you can change the automatically selected name or change the launch config for the AuT by click on "Advancded". 
 
-Recommended VM Arguments:
--Dosgi.requiredJavaVersion=1.7 -Xms512m -Xmx2048m -XX:MaxPermSize=128m
+#### Recommended VM Arguments
+> -Dosgi.requiredJavaVersion=1.7 -Xms512m -Xmx2048m -XX:MaxPermSize=128m
 -DexamplesDir=USER.HOME\git\Palladio-Build-IntegrationTests\org.palladiosimulator.product.tests.ui\target/examples (folder containing example projects to test)
 
 
