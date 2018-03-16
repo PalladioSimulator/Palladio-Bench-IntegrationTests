@@ -11,8 +11,7 @@
 For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/getstarted/#add-an-application-under-test
 
 - To Configure your AuT click on a created AuT in the list, and click on "Configure..." on View Toolbar. Here you can change the automatically selected name or change the launch config for the AuT by click on "Advancded". 
-
-#### Recommended VM Arguments
+#### Recommended VM Arguments:
 > -Dosgi.requiredJavaVersion=1.7 -Xms512m -Xmx2048m -XX:MaxPermSize=128m
 -DexamplesDir=USER.HOME\git\Palladio-Build-IntegrationTests\org.palladiosimulator.product.tests.ui\target/examples (folder containing example projects to test)
 
@@ -27,7 +26,6 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
 
 
 ## Create a new Testcase:
-
 - In RCPTT Project click File > New > Test Case, name it as on Jira, copy the steps from Jira in description of the test
 - Create or Caputure Contexts and test them with "Apply" (Pay attention to the order!!!) 
   - Setting Workspace and check "Clear Workspace".
@@ -52,7 +50,7 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
 - Use contexts feature instead of writing a script doing this
 - Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
 - Select the options "clear workspace context" and "clear launch configs", if it does not affect the test
-- Where possible avoid selections, especially the ".*" star selections
+- Where possible avoid selections, especially the star selections
 - Make a refresh or key-type f5 before every action in project explorer
 - Use the simple copy paste commands for copying files, not those in the menu
 - Also check test cases in maven script very often
