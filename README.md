@@ -20,7 +20,7 @@ Recommended VM Arguments:
 Structure of a Testcase:
 - Name incl. Tags: should be the same as on issue tracker system or requirements management tool 
 - Description incl. Reference Site: list of test steps, comments and link to issue tracker system 
-- Contexts: Workspace, Workbench, Folder, Parameter, Launch Config, Script Snippet
+- Contexts: mainly used Workspace, Workbench, Folder, Parameter, Launch Config and Script Snippets
 - Properties: (not used)
 - Script: main ECL script of the test
 - Verifications: (not used)
@@ -28,12 +28,12 @@ Structure of a Testcase:
 Create a new Testcase:
 - In RCPTT Project click File > New > Test Case, name it as on Jira, copy the steps from Jira in description of the test
 - Create or Caputure Contexts and test them with "Apply" 
-  - Setting Workspace and check "Clear Workspace"
-  - Collect Workbench in running AUT and take over in RCPTT with "Capture"
-  - Project Name Parameter
-  - Project Import Snippet
-  - Folder to import reference files or other files in project directory
-  - Script Snippets: Clean EDP2Storage, Create EDP2 Storage
+  - Setting Workspace and check "Clear Workspace".
+  - Adjust Workbench in running AUT and take over in RCPTT with "Capture".
+  - Parameter to parameterize Script or Script Snippets, (here used to set Project Name in Project Import Snippet).
+  - Project Import Snippet: Calculates an absoulte path for pcm examples and imports an existing project using this path.
+  - Script Snippets: Clean EDP2Storage, which closes all existing databases and deletes them. Create EDP2 Storage, which creates a new EDP2 Database and set its name to "EDP2_DB"
+  - Folder used to import reference files or other files in project directory "temporaryProject"
   - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run  configurations
   
   -> Pay attention to the order!!!
