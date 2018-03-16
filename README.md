@@ -1,7 +1,7 @@
 # Palladio-Build-IntegrationTests
 
 
-Preparation:
+## Preparation:
 - Download RCPTT from https://www.eclipse.org/rcptt/download/
 - RCPTT Documentation at https://www.eclipse.org/rcptt/documentation/userguide/getstarted/
 - Download Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
@@ -16,7 +16,7 @@ Recommended VM Arguments:
 -DexamplesDir=USER.HOME\git\Palladio-Build-IntegrationTests\org.palladiosimulator.product.tests.ui\target/examples (folder containing example projects to test)
 
 
-Structure of a Testcase:
+## Structure of a Testcase:
 - Name incl. Tags: should be the same as on issue tracker system or requirements management tool 
 - Description incl. Reference Site: list of test steps, comments and link to issue tracker system 
 - Contexts: mainly used Workspace, Workbench, Folder, Parameter, Launch Config and Script Snippets
@@ -25,7 +25,7 @@ Structure of a Testcase:
 - Verifications: (not used)
 
 
-Create a new Testcase:
+## Create a new Testcase:
 
 - In RCPTT Project click File > New > Test Case, name it as on Jira, copy the steps from Jira in description of the test
 - Create or Caputure Contexts and test them with "Apply" (Pay attention to the order!!!) 
@@ -40,13 +40,13 @@ Create a new Testcase:
 - List of predefined commands at https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html
 - To analyse your script and run it step by step use DEBUG perspective
 
-Extend a Testcase:
+## Extend a Testcase:
 - Add new context in context section. Whereever possible, re-record contexts instead of extending existing ones.
 - Expand Script Code
 - Before running in maven, let it run locally with the "replay" function
 - Launch pom.xml with maven "verify" goal
 
-Maintain a Testcase:
+## Maintain a Testcase:
 - Always make sure that no simulation results from an earlier test run are in project directory
 - Use contexts feature instead of writing a script doing this
 - Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...)
@@ -59,7 +59,7 @@ Maintain a Testcase:
 - Delete all "get-palette-entry" commands in sirius editor test scripts that were not really selected during the test (mouse only hovered/moved, not pressed)
 
 
-Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
+## Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 - Generate pom.xml (right click on project > RCPTT > generate pom.xml), for more infos check https://www.eclipse.org/rcptt/documentation/userguide/maven/
 - Configurate pom.xml (packaging as "rcpttTest", linking AUT), for more infos check https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 - SCM for SVN-Import: http://maven.apache.org/scm/subversion.html
@@ -69,10 +69,10 @@ Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
 - Example for pom.xml under https://raw.githubusercontent.com/PalladioSimulator/Palladio-Build-IntegrationTests/master/org.palladiosimulator.product.tests.ui/pom.xml
 
 
-Running Maven Script:
+## Running Maven Script:
 - Install "m2e - Maven integration for Eclipse" under Help > install new software
 - Right click on pom.xml > Run as > Run Configurations > Create new Maven Build Configuration with goal "verify" (check Screenshots for details about errors) > Run
 - Check console for the results
 
 
-For more Help check the Community: https://www.eclipse.org/forums/index.php/f/281/
+* For more Help check the Community: https://www.eclipse.org/forums/index.php/f/281/ *
