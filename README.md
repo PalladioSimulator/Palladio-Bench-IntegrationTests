@@ -7,10 +7,10 @@
 - Download Palladio Bench from https://sdqweb.ipd.kit.edu/eclipse/palladiobench/releases/4.1.0/ 
 - Create new RCPTT-Project
 
-- To Add an Application-under-Test(AuT), go to "Applications" View in RCPTT Suite and click "New..." Button on View Toolbar. In the opening Dialog, browse for an AuT location on a disk. AuT name is automatically set to AuT's product-id. Click Finish and double click on AuT to launch it. 
-For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/getstarted/#add-an-application-under-test
+- To add an Application-under-Test(AuT), go to "Applications" View in RCPTT Suite and click "New..." button on View Toolbar. In the opening dialog, browse for an AuT location on a disk. AuT name is automatically set to AuT's product-id. Click "Finish" and double click on AuT to launch it. 
+For more details check: https://www.eclipse.org/rcptt/documentation/userguide/getstarted/#add-an-application-under-test
 
-- To Configure your AuT click on a created AuT in the list, and click on "Configure..." on View Toolbar. Here you can change the automatically selected name or change the launch config for the AuT by click on "Advancded". 
+- To configure your AuT click on a created AuT in the list, and click on "Configure..." on View Toolbar. Here you can change the automatically selected name or change the launch config for the AuT by clicking on "Advancded". 
 #### Recommended VM Arguments:
 > -Dosgi.requiredJavaVersion=1.7 -Xms512m -Xmx2048m -XX:MaxPermSize=128m
 -DexamplesDir=USER.HOME\git\Palladio-Build-IntegrationTests\org.palladiosimulator.product.tests.ui\target/examples (folder containing example projects to test)
@@ -27,35 +27,35 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
 
 ## Create a new Testcase:
 - In RCPTT Project click File > New > Test Case, name it as on Jira, copy the steps from Jira in description of the test
-- Create or Caputure Contexts and test them with "Apply" (Pay attention to the order!!!) 
-  - Setting Workspace and check "Clear Workspace".
+- Create or caputure contexts and test them with "Apply" (list the contexts in correct order!) 
+  - Set Workspace and check "Clear Workspace".
   - Adjust Workbench in running AUT and take over in RCPTT with "Capture".
-  - Parameter to parameterize Script or Script Snippets, (here used to set Project Name in Project Import Snippet).
+  - Parameter to parameterize script or script snippets, (here used to set Project Name in Project Import Snippet).
   - Project Import Snippet: Calculates an absoulte path for pcm examples and imports an existing project using this path.
-  - Script Snippets: Clean EDP2 Storage, which closes all existing databases and deletes them. Create EDP2 Storage, which creates a new EDP2 Database and set its name to "EDP2_DB".
+  - Script Snippets: Clean EDP2 Storage, which closes all existing databases and deletes them. Create EDP2 Storage, which creates a new EDP2 database and set its name to "EDP2_DB".
   - Folder used to import reference files or other files in project directory "temporaryProject".
-  - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run  configuration. Record launches additionally to defining launch configs by pressing "Capture" button during a running launch in AUT
+  - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run  configuration. Record launches additionally to define launch configs by pressing "Capture" button during a running launch in AUT
 - Write a script or record it through the "Record" function (where possible, record and copy smaller sections with the snippet function), if possible leave AUT open, restart if necessary, or delete completely and add again
 - List of predefined commands at https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html
 - To analyse your script and run it step by step, use DEBUG perspective
 
 ## Extend a Testcase:
-- Add new context in context section. Whereever possible, re-record contexts instead of extending existing ones.
-- Expand Script Code.
-- Before running in maven, let it run locally with the "replay" function.
-- Launch pom.xml with maven goal "verify".
+- Add new context in context section. Wherever possible, re-record contexts instead of extending existing ones.
+- Expand script code.
+- Before running in Maven, let it run locally with the "replay" function.
+- Launch pom.xml with Maven goal "verify".
 
 ## Maintain a Testcase:
 - Always make sure that no simulation results from an earlier test run are in project directory.
-- Use contexts feature instead of writing a script doing this.
+- Use contexts feature instead of writing a script doing it.
 - Pay attention to context order (Workspace Context, Folder, Workbench, Launch Config...).
 - Select the options "clear workspace context" and "clear launch configs", if it does not affect the test.
 - Where possible avoid selections, especially the star selections.
 - Make a refresh or key-type f5 before every action in project explorer.
 - Use the simple copy paste commands for copying files, not those in the menu.
-- Also check test cases in maven script very often.
+- Also check test cases in Maven script very often.
 - In graphical tests, avoid mouse movements (e.g. drag and drop) as much as possible; select the elements through the tree of project explorer and edit them via the properties window.
-- Delete all "get-palette-entry" commands in sirius editor test scripts that were not really selected during the test (mouse only hovered/moved, not pressed).
+- Delete all "get-palette-entry" commands in Sirius editor test scripts that were not really selected during the test (mouse only hovered/moved, not pressed).
 
 
 ## Automating RCPTT Testing in Maven Build with RCPTT Maven Plugin:
