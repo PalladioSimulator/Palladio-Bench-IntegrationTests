@@ -75,4 +75,4 @@ Recommended VM Arguments:
 - Check console for the results
 
 
-`< For more Help check the Community>` : <https://www.eclipse.org/forums/index.php/f/281/>
+`< For more help, check the community>` : <https://www.eclipse.org/forums/index.php/f/281/>
