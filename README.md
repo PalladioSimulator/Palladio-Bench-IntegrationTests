@@ -18,6 +18,7 @@ Recommended VM Arguments:
 
 
 Structure of a Testcase:
+
 - Name incl. Tags: should be the same as on issue tracker system or requirements management tool 
 - Description incl. Reference Site: list of test steps, comments and link to issue tracker system 
 - Contexts: mainly used Workspace, Workbench, Folder, Parameter, Launch Config and Script Snippets
@@ -25,19 +26,18 @@ Structure of a Testcase:
 - Script: main ECL script of the test
 - Verifications: (not used)
 
+
 Create a new Testcase:
+
 - In RCPTT Project click File > New > Test Case, name it as on Jira, copy the steps from Jira in description of the test
-- Create or Caputure Contexts and test them with "Apply" 
+- Create or Caputure Contexts and test them with "Apply" (Pay attention to the order!!!) 
   - Setting Workspace and check "Clear Workspace".
   - Adjust Workbench in running AUT and take over in RCPTT with "Capture".
   - Parameter to parameterize Script or Script Snippets, (here used to set Project Name in Project Import Snippet).
   - Project Import Snippet: Calculates an absoulte path for pcm examples and imports an existing project using this path.
-  - Script Snippets: Clean EDP2Storage, which closes all existing databases and deletes them. Create EDP2 Storage, which creates a new EDP2 Database and set its name to "EDP2_DB"
-  - Folder used to import reference files or other files in project directory "temporaryProject"
-  - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run  configurations
-  
-  -> Pay attention to the order!!!
-  
+  - Script Snippets: Clean EDP2Storage, which closes all existing databases and deletes them. Create EDP2 Storage, which creates a new EDP2 Database and set its name to "EDP2_DB".
+  - Folder used to import reference files or other files in project directory "temporaryProject".
+  - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run  configuration. 
 - Write a script or record it through the "Record" function (where possible, record and copy smaller sections with the snippet function), if possible leave AUT open, restart if necessary, or delete completely and add again
 - List of predefined commands at https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html
 - To analyse your script and run it step by step use DEBUG perspective
