@@ -43,6 +43,8 @@ Create a new Testcase:
 - To analyse your script and run it step by step use DEBUG perspective
 
 Extend a Testcase:
+- 
+- Extend Script
 
 Maintain a Testcase:
 
