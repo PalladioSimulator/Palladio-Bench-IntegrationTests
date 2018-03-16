@@ -32,7 +32,7 @@ For more Details check: https://www.eclipse.org/rcptt/documentation/userguide/ge
   - Adjust Workbench in running AUT and take over in RCPTT with "Capture".
   - Parameter to parameterize Script or Script Snippets, (here used to set Project Name in Project Import Snippet).
   - Project Import Snippet: Calculates an absoulte path for pcm examples and imports an existing project using this path.
-  - Script Snippets: Clean EDP2Storage, which closes all existing databases and deletes them. Create EDP2 Storage, which creates a new EDP2 Database and set its name to "EDP2_DB".
+  - Script Snippets: Clean EDP2 Storage, which closes all existing databases and deletes them. Create EDP2 Storage, which creates a new EDP2 Database and set its name to "EDP2_DB".
   - Folder used to import reference files or other files in project directory "temporaryProject".
   - Take over launch configs after project import through "Capture", to run multiple run configs check "Multiple Launches" in run  configuration. Record launches additionally to defining launch configs by pressing "Capture" button during a running launch in AUT
 - Write a script or record it through the "Record" function (where possible, record and copy smaller sections with the snippet function), if possible leave AUT open, restart if necessary, or delete completely and add again
