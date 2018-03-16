@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-94
 Id: _yhy4kB75EeizwOOeaV1e7w
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/16/18 11:22 AM
+Save-Time: 3/16/18 11:21 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -803,6 +803,10 @@ with [get-view Properties | get-tree] {
 
 with [get-editor "Seff Diagram"] {
     with [get-palette] {
+        get-palette-entry Select | mouse-move 11 0 -height 19 -width 19
+        get-palette-entry ReleaseAction | mouse-move 53 21 -height 23 -width 132
+        get-palette-entry LoopAction | mouse-move 66 22 -height 23 -width 132
+        get-palette-entry CollectionIteratorAction | mouse-move 68 22 -height 23 -width 132
         with [get-palette-entry Actions] {
             mouse-move 55 123 button1 -height 126 -width 125
             mouse-press 55 123 button1 -height 126 -width 125
@@ -860,6 +864,7 @@ with [get-editor "Seff Diagram"] {
     get-palette | get-palette-entry "Probabilistic Branch Transition" | mouse-move 117 6 -height 23 -width 196
     get-diagram -index 1 | get-edit-part -name "Seff Diagram" | mouse-move 864 87 -height 428 -width 866
     with [get-palette] {
+        get-palette-entry ForkAction | mouse-move 20 22 -height 23 -width 132
         with [get-palette-entry RecoveryAction] {
             mouse-move 32 12 button1 -height 23 -width 132
             mouse-press 32 12 button1 -height 23 -width 132
