@@ -1,5 +1,6 @@
 # Palladio-Build-IntegrationTests
 
+![](https://www.eclipse.org/rcptt/img/badge-rcptt.png)
 
 ## Preparation:
 - Download RCPTT from https://www.eclipse.org/rcptt/download/
