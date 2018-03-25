@@ -6,16 +6,16 @@ Element-Type: context
 Element-Version: 2.0
 Id: _zTBEQCbHEeijtqTfgZ4QdA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/14/18 4:32 PM
+Save-Time: 3/16/18 11:49 AM
 
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
 Content-Type: text/ecl
 Entry-Name: .ecl.context
 
-// calculate an absolute path
+// Calculates an absolute path for import of pcm examples
 global [val projectLocation [concat [get-java-property "examplesDir" | str | invoke replace "\"" ""] "/" [$projectName]]]
 
-// import a project
+// Imports an existing project from the calculated path
 get-menu -path "File/Import..." | click
 with [get-window Import] {
     get-tree | select "General/Existing Projects into Workspace"

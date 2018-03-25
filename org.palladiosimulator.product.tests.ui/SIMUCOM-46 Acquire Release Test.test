@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/SIMUCOM-46
 Id: _6-Il8B08EeiqQd73_u1uiA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/15/18 7:43 PM
+Save-Time: 3/16/18 12:28 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -24,6 +24,8 @@ PCM Instanz starten, Beispiel Projekt mit dem Namen "AcquireExample" unter (http
 Content-Type: text/ecl
 Entry-Name: .content
 
+// In the EDP2 perspective there is an experiment view where all edp2 databases are listed.
+// The simulation results will be exported to CSV files in an additional temporaryProject so that they can be further processed.
 with [get-view Experiments] {
     click
     get-tree | select "Local Memory.*"
@@ -37,7 +39,7 @@ with [get-window "Select Batch Export Target Folder"] {
     }
     get-button Finish | click
 }
-
+// The files of the simulation results will be moved to project directory
 with [get-view "Project Explorer" | get-tree] {
     select "temporaryProject" | get-menu -path Refresh | click
     select "temporaryProject/Acquire_Example__.*/Default_Variation.*/.*/Usage_Scenario_defaultUsageScenario_Response_Time_Tuple.csv"
@@ -50,7 +52,7 @@ with [get-window "Move Resources"] {
     get-tree | select temporaryProject
     get-button OK | click
 }
-
+// The simulation result files are compared with reference files that were previously imported via the workspace context "Acquire Release Test Folder".
 assert-tables-match [read-csv-file "workspace:/temporaryProject/Usage_Scenario_defaultUsageScenario_Response_Time_Tuple.csv" | select-columns "Response Time[s]" ] [read-csv-file "workspace:/temporaryProject/Usage_Scenario_defaultUsageScenario_Response_Time_Tuple_Reference.csv" | select-columns "Response Time[s]"]
 assert-tables-match [read-csv-file "workspace:/temporaryProject/Passive_Resource_Assembly_Impl_Impl_.lock_Waiting_Time_Tuple.csv" | select-columns "Waiting Time[s]" ] [read-csv-file "workspace:/temporaryProject/Passive_Resource_Assembly_Impl_Impl_.lock_Waiting_Time_Tuple_Reference.csv" | select-columns "Waiting Time[s]"]
 assert-tables-match [read-csv-file "workspace:/temporaryProject/Passive_Resource_Assembly_Impl_Impl_.lock_State_of_Passive_Resource_Tuple.csv"] [read-csv-file "workspace:/temporaryProject/Passive_Resource_Assembly_Impl_Impl_.lock_State_of_Passive_Resource_Tuple_Reference.csv"]
