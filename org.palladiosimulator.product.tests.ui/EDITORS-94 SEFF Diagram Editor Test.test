@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-94
 Id: _yhy4kB75EeizwOOeaV1e7w
 Runtime-Version: 2.3.0.201806262310
-Save-Time: 8/14/18, 5:23 PM
+Save-Time: 8/14/18, 5:28 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -216,7 +216,7 @@ with [get-editor "new Repository Diagram"] {
         commit-direct-edit
         key-type Enter
         with [get-edit-part -name "new Repository Diagram"] {
-            with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+            with [get-edit-part -name "<<InfrastructureInterface>>\n"
                 + "IR2" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
                 mouse-move 66 7 -height 61 -width 196
                 mouse-hover 66 7 -height 61 -width 196
@@ -231,7 +231,7 @@ with [get-editor "new Repository Diagram"] {
         }
         get-figure -path "0/1/0/0" | mouse-release 274 55 button1 524288 -height 575 -width 1091
         with [get-edit-part -name "new Repository Diagram"] {
-            with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+            with [get-edit-part -name "<<InfrastructureInterface>>\n"
                 + "IR2" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
                 mouse-move 61 7 button1 -height 61 -width 196
                 mouse-press 61 7 button1 -height 61 -width 196
@@ -276,7 +276,7 @@ with [get-editor "new Repository Diagram"] {
             }
         }
         mouse-move 469 90 -height 575 -width 1091
-        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+        with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "IR2"] {
             mouse-move 36 33 -height 100 -width 200
             with [get-edit-part -className DNodeListNameEditPart] {
@@ -287,7 +287,7 @@ with [get-editor "new Repository Diagram"] {
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
-        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+        with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "IR2" | get-edit-part -className DNodeListNameEditPart] {
             mouse-release 58 9 button1 524288 -height 26 -width 170
             mouse-hover 58 9 -height 26 -width 170
