@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-97
 Id: _VZFdAB75EeizwOOeaV1e7w
 Runtime-Version: 2.3.0.201806262310
-Save-Time: 8/16/18, 10:58 AM
+Save-Time: 8/16/18, 11:09 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -212,21 +212,22 @@ with [get-editor "new Repository Diagram"] {
     
     // Infrastructure provided role CC1 -> IR2
     with [get-palette | get-palette-entry InfrastructureProvidedRole] {
-        mouse-press 0 0 button1 -height 0 -width 0
-        mouse-release 0 0 button1 -height 0 -width 0
+        mouse-press 0 0 button1 -height 26 -width 357
+        mouse-release 0 0 button1 -height 26 -width 357
     }
     with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
         with [get-edit-part -name "<<CompositeComponent>>\n"
             + "CC1"] {
-            mouse-move 180 30 button1 -height 60 -width 0
-            mouse-press 180 30 button1 -height 60 -width 0
-            mouse-release 180 30 button1 -height 60 -width 0
+            mouse-move 12 30 button1 -height 100 -width 200
+            mouse-press 12 30 button1 -height 100 -width 200
+            mouse-release 12 30 button1 -height 100 -width 200
         }
         with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "IR2"] {
-            mouse-move 80 10 button1 -height 60 -width 0
-            mouse-press 80 10 button1 -height 60 -width 0
-            mouse-release 80 10 button1 -height 60 -width 0
+            mouse-move 121 24 button1 -height 59 -width 196
+            mouse-press 0 0 button1
+            mouse-release 0 0 button1
+            get-target-connection -path 1 | get-edit-part -className DEdgeNameEditPart | get-property name | equals "<<Provides>> \nCC1.IR2.InfrastructureProvidedRole1" | verify-true
         }
     }
 
