@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-98
 Id: _ETem8B75EeizwOOeaV1e7w
-Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/7/18 10:31 AM
+Runtime-Version: 2.3.0.201806262310
+Save-Time: 8/20/18, 6:52 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -387,7 +387,7 @@ with [get-editor "new Repository Diagram"] {
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
-        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+        with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "InfrastructureInterface1"] {
             mouse-move 199 65 -height 100 -width 200
             with [get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
@@ -414,7 +414,7 @@ with [get-editor "new Repository Diagram"] {
                 mouse-release 165 9 button1 524288 -height 40 -width 232
             }
         }
-        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+        with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "InfrastructureInterface1" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
             mouse-move 58 4 -height 61 -width 196
             mouse-hover 58 4 -height 61 -width 196
@@ -423,7 +423,7 @@ with [get-editor "new Repository Diagram"] {
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
-        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+        with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "InfrastructureInterface1" | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
             mouse-release 58 4 button1 524288 -height 61 -width 196
             mouse-hover 58 4 -height 61 -width 196
@@ -517,7 +517,7 @@ with [get-editor "new Repository Diagram"] {
             mouse-release 125 0 button1 524288 -height 161 -width 182
         }
         mouse-move 688 224 -height 575 -width 1039
-        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+        with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "InfrastructureInterface1"] {
             mouse-move 107 31 -height 100 -width 200
             with [get-edit-part -className DNodeListNameEditPart] {
@@ -527,7 +527,7 @@ with [get-editor "new Repository Diagram"] {
         }
     }
     with [get-diagram -index 1 | get-edit-part -name "new Repository Diagram"] {
-        with [get-edit-part -name "<<InfrarstructureInterface>>\n"
+        with [get-edit-part -name "<<InfrastructureInterface>>\n"
             + "InfrastructureInterface1"] {
             with [get-edit-part -className DNodeListNameEditPart] {
                 mouse-release 103 8 button1 524288 -height 26 -width 170
