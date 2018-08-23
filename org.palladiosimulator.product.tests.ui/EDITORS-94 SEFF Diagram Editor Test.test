@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: https://sdqbuild.ipd.kit.edu/jira/browse/EDITORS-94
 Id: _yhy4kB75EeizwOOeaV1e7w
 Runtime-Version: 2.3.0.201806262310
-Save-Time: 8/20/18, 8:44 PM
+Save-Time: 8/23/18, 1:49 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -336,11 +336,6 @@ with [get-editor "Seff Diagram"] {
         with [get-palette-entry RecoveryAction] {
             mouse-press 64 20 button1 -height 23 -width 125
             mouse-release 64 20 button1 524288 -height 23 -width 125
-        }
-        with [get-palette-entry "Action Details"] {
-            mouse-move 61 214 button1 -height 218 -width 125
-            mouse-press 61 214 button1 -height 218 -width 125
-            mouse-release 61 214 button1 524288 -height 218 -width 125
         }
         with [get-palette-entry "Variable Usage"] {
             mouse-move 49 15 button1 -height 23 -width 125
