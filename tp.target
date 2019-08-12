@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="org.palladiosimulator.simulizar Target Platform" sequenceNumber="1">
+<locations>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="org.eclipse.swtbot.feature.group" version="2.7.0.201806111355"/>
+			<unit id="org.eclipse.swtbot.eclipse.feature.group" version="2.7.0.201806111355"/>
+			<unit id="org.eclipse.swtbot.eclipse.gef.feature.group" version="2.7.0.201806111355"/>
+			<repository location="http://ftp.fau.de/eclipse/releases/photon/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="org.apache.commons.collections" version="3.2.2.v201511171945"/>
+			<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20180606145124/repository"/>
+		</location>
+</locations>
+</target>

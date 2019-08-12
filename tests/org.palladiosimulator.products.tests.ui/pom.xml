@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.palladiosimulator.product.uitests</groupId>
+		<artifactId>tests</artifactId>	
+		<version>0.1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>org.palladiosimulator.products.tests.ui</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>eclipse-test-plugin</packaging>
+
+	<properties>
+		<examples.dir>${project.build.directory}/examples</examples.dir>
+	</properties>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.5</version>
+				<executions>
+					<execution>
+						<id>default-resources</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>checkout</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration> 
+					<checkoutDirectory>${examples.dir}</checkoutDirectory>
+					<connectionType>connection</connectionType> 
+					<connectionUrl>scm:git:https://github.com/PalladioSimulator/Palladio-Example-Models.git</connectionUrl>
+				</configuration> 
+			</plugin>
+
+			<plugin>
+				<groupId>com.googlecode.maven-download-plugin</groupId>
+				<artifactId>download-maven-plugin</artifactId>
+				<version>1.4.1</version>
+				<executions>
+					<execution>
+						<id>download-product</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>https://sdqweb.ipd.kit.edu/eclipse/palladiobench/nightly/Palladio.${target.platform.os}.${target.platform.ws}.${target.platform.arch}.zip</url>
+							<unpack>true</unpack>
+							<skipCache>true</skipCache>
+							<outputDirectory>${project.build.directory}/work</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<useUIHarness>true</useUIHarness>
+					<useUIThread>false</useUIThread>
+					<product>org.palladiosimulator.pcm.ui.PalladioProduct</product>
+					<argLine>${tycho.testArgLine} "-DexamplesDir=${examples.dir}" -Dorg.eclipse.swtbot.search.timeout=180000</argLine>
+					<testRuntime>p2Installed</testRuntime>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

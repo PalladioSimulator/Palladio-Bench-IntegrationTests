@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Palladio-Bench-IntegrationTests
+Bundle-SymbolicName: org.palladiosimulator.products.tests.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: 
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.swtbot.eclipse.finder,
+ org.eclipse.swtbot.junit4_x,
+ org.hamcrest.core,
+ org.apache.commons.collections,
+ org.apache.log4j,
+ org.junit,
+ org.eclipse.swtbot.eclipse.gef.finder,
+ org.eclipse.gef,
+ org.eclipse.sirius.ext.gmf.runtime,
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.8.0",
+ org.eclipse.sirius.diagram.ui;bundle-version="6.0.0"
+Automatic-Module-Name: org.palladiosimulator.products.tests.ui
